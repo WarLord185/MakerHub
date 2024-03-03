@@ -12,6 +12,7 @@ body {
     background-color: #2e3a42;
     font-family: "Poppins", sans-serif;
     color: #e6e6ea;
+    background-color: #34424b;
 }
 
 .header-container {
@@ -44,6 +45,48 @@ body {
     text-decoration: none;
     margin-left: 20px;
 }
+
+/* Styles for the banner */
+.banner {
+    position: relative;
+    width: 100%;
+}
+
+.banner img {
+    width: 100%; 
+}
+
+/* Styles for the search bar */
+.search-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.search-overlay input[type=text] {
+    padding: 10px;
+    width: 400px;
+    border: none;
+    border-radius: 20px;
+}
+
+.search-overlay button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.search-overlay button:hover {
+    background: #45a049;
+}
+
+
+
 
 footer {
     background-color: hsla(0, 8.7%, 91%, 0.05);
