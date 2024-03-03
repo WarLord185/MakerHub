@@ -27,6 +27,13 @@
         </div>
     </div>
 </header>
+<div class="banner">
+    <img src="banner-image.jpg" alt="Banner Image">
+    <div class="search-overlay">
+        <input type="text" placeholder="Search...">
+        <button>Search</button>
+    </div>
+</div>
 <footer>
     <div class="container">
         <div class="row">
