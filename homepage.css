@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 header {
     background-color: #333;
     color: #fff;
@@ -8,6 +10,8 @@ header {
 body {
     margin: 0px;
     background-color: #2e3a42;
+    font-family: "Poppins", sans-serif;
+    color: #e6e6ea;
 }
 
 .header-container {
@@ -44,7 +48,6 @@ body {
 footer {
     background-color: hsla(0, 8.7%, 91%, 0.05);
     padding: 20px;
-    font-family: Arial, sans-serif;
     color: #e6e6ea;
 }
 .container {
@@ -67,10 +70,31 @@ ul {
     padding: 0;
 }
 a {
-    color: #007bff;
+    color: #e6e6ea;
     text-decoration: none;
 }
 .text-center {
     text-align: center;
 }
 
+.feat-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.feat-head {
+    font-size: 140%;
+    line-height: normal;
+    margin: 20px;
+}
+
+.feat-grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+}
+
+.feat-card {
+    text-align: center;
+    font-size: 30px;
+}
