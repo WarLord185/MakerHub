@@ -1,0 +1,66 @@
+CREATE TABLE `Space Owner` (
+  `Owner_ID` INT PRIMARY KEY,
+  `Name` VARCHAR(255),
+  `Address` VARCHAR(255),
+  `Phone_Number` VARCHAR(255),
+  `DoB` DATE
+);
+
+CREATE TABLE `Space` (
+  `Space_ID` INT PRIMARY KEY,
+  `Address` VARCHAR(255),
+  `Description` VARCHAR(255),
+  `Type` VARCHAR(50),
+  `Price` DECIMAL(10, 2),
+  `Availability` BOOLEAN,
+  `Owner_ID` INT,
+  FOREIGN KEY (`Owner_ID`) REFERENCES `SpaceOwner`(`Owner_ID`)
+);
+
+CREATE TABLE `Favorite` (
+  `Favorite_ID` INT PRIMARY KEY,
+  `Space_ID` INT,
+  `Renter_ID` INT,
+  `SaveDate` DATE,
+  FOREIGN KEY (`Space_ID`) REFERENCES `Space`(`Space_ID`),
+  FOREIGN KEY (`Renter_ID`) REFERENCES `Renter`(`Renter_ID`)
+);
+
+CREATE TABLE `Renter` (
+  `Renter_ID` INT PRIMARY KEY,
+  `Name` VARCHAR(255),
+  `Address` VARCHAR(255),
+  `DoB` DATE,
+  `Phone_Number` VARCHAR(20)
+);
+
+CREATE TABLE `Payment` (
+  `Payment_ID` INT PRIMARY KEY,
+  `Booking_ID` INT,
+  `Method` VARCHAR(50),
+  `Status` VARCHAR(50),
+  `Amount` DECIMAL(10, 2),
+  `DatePaid` DATE,
+  FOREIGN KEY (`Booking_ID`) REFERENCES `Booking`(`Booking_ID`)
+);
+
+CREATE TABLE `Booking` (
+  `Booking_ID` INT PRIMARY KEY,
+  `Renter_ID` INT,
+  `Space_ID` INT,
+  `Status` VARCHAR(255),
+  `BookingDate` DATE,
+  `StartTime` DATETIME,
+  `EndTime` DATETIME,
+  FOREIGN KEY (`Space_ID`) REFERENCES `Space`(`Space_ID`),
+  FOREIGN KEY (`Renter_ID`) REFERENCES `Renter`(`Renter_ID`)
+);
+
+CREATE TABLE `Picture` (
+  `Pic_ID` INT PRIMARY KEY,
+  `Pic_URL` VARCHAR(255),
+  `UploadDate` DATE,
+  `Caption` VARCHAR(255),
+  `Space_ID` INT,
+  FOREIGN KEY (`Space_ID`) REFERENCES `Space`(`Space_ID`)
+);
