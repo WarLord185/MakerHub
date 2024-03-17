@@ -1,3 +1,6 @@
+CREATE DATABASE MakerHub;
+USE MakerHub;
+
 CREATE TABLE `Space Owner` (
   `Owner_ID` INT PRIMARY KEY,
   `Name` VARCHAR(255),
@@ -14,16 +17,7 @@ CREATE TABLE `Space` (
   `Price` DECIMAL(10, 2),
   `Availability` BOOLEAN,
   `Owner_ID` INT,
-  FOREIGN KEY (`Owner_ID`) REFERENCES `SpaceOwner`(`Owner_ID`)
-);
-
-CREATE TABLE `Favorite` (
-  `Favorite_ID` INT PRIMARY KEY,
-  `Space_ID` INT,
-  `Renter_ID` INT,
-  `SaveDate` DATE,
-  FOREIGN KEY (`Space_ID`) REFERENCES `Space`(`Space_ID`),
-  FOREIGN KEY (`Renter_ID`) REFERENCES `Renter`(`Renter_ID`)
+  FOREIGN KEY (`Owner_ID`) REFERENCES `Space Owner`(`Owner_ID`)
 );
 
 CREATE TABLE `Renter` (
@@ -34,14 +28,13 @@ CREATE TABLE `Renter` (
   `Phone_Number` VARCHAR(20)
 );
 
-CREATE TABLE `Payment` (
-  `Payment_ID` INT PRIMARY KEY,
-  `Booking_ID` INT,
-  `Method` VARCHAR(50),
-  `Status` VARCHAR(50),
-  `Amount` DECIMAL(10, 2),
-  `DatePaid` DATE,
-  FOREIGN KEY (`Booking_ID`) REFERENCES `Booking`(`Booking_ID`)
+CREATE TABLE `Favorite` (
+  `Favorite_ID` INT PRIMARY KEY,
+  `Space_ID` INT,
+  `Renter_ID` INT,
+  `SaveDate` DATE,
+  FOREIGN KEY (`Space_ID`) REFERENCES `Space`(`Space_ID`),
+  FOREIGN KEY (`Renter_ID`) REFERENCES `Renter`(`Renter_ID`)
 );
 
 CREATE TABLE `Booking` (
@@ -56,6 +49,16 @@ CREATE TABLE `Booking` (
   FOREIGN KEY (`Renter_ID`) REFERENCES `Renter`(`Renter_ID`)
 );
 
+CREATE TABLE `Payment` (
+  `Payment_ID` INT PRIMARY KEY,
+  `Booking_ID` INT,
+  `Method` VARCHAR(50),
+  `Status` VARCHAR(50),
+  `Amount` DECIMAL(10, 2),
+  `DatePaid` DATE,
+  FOREIGN KEY (`Booking_ID`) REFERENCES `Booking`(`Booking_ID`)
+);
+
 CREATE TABLE `Picture` (
   `Pic_ID` INT PRIMARY KEY,
   `Pic_URL` VARCHAR(255),
@@ -64,3 +67,5 @@ CREATE TABLE `Picture` (
   `Space_ID` INT,
   FOREIGN KEY (`Space_ID`) REFERENCES `Space`(`Space_ID`)
 );
+
+
