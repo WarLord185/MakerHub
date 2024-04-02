@@ -4,7 +4,7 @@
   </head>
   <body>
 
-    <%@ page import="makerhub.*"%>
+    <%@ page import="makerhub.*, java.util.ArrayList"%>
     
     <%
 
@@ -14,7 +14,7 @@
       String tele=request.getParameter("tel");
       String date =request.getParameter("DOB");
 
-    insert rent= new insert();
+    insertUser rent= new insertUser();
 
       int r =  rent.insertrenter(name, a, date, tele);                
 

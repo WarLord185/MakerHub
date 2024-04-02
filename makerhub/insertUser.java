@@ -6,9 +6,9 @@ import java.sql.SQLException;
 
 
  
-public class insert extends DBConnect {
+public class insertUser extends DBConnect {
     
-    public insert(){
+    public insertUser(){
         
     }
     

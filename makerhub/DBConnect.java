@@ -15,7 +15,7 @@ public class DBConnect {
 				conn = DriverManager.getConnection(
 								"jdbc:mysql://localhost:3306/makerhub?autoReconnect=true&useSSL=false",
 								"root",
-								"Luke20112005"
+								"Admin@2023"
 						);
     		}
 			catch (Exception e) {
