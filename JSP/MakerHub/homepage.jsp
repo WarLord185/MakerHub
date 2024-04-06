@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MakerHub</title>
+    <link rel="stylesheet" href="homepage.css">
+    <script src="homepage.js"></script>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="brand">
+            <h1>MakerHub</h1>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Bookings</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="user-links">
+            <a href="#">Login</a>
+            <a href="#">Sign Up</a>
+        </div>
+    </div>
+</header>
+
+<div class="banner">
+    <img src="images/banner-image.jpg" alt="Banner Image">
+    <div class="search-overlay">
+        <input type="text" placeholder="Search...">
+        <button>Search</button>
+    </div>
+</div>
+
+<div class="feat-container">
+    <div class ="feat-head">
+        <h2>Featured Spaces</h2>
+    </div>
+    <div class="feat-grid-container">
+        <div class="feat-card">
+            <div class="feat-grid-contents"><img src= "images/beautiful-girl-with-long-hair-garage-repairing-motorcycle.jpg " style="width:100%" class="feat-grid-img feat-img"><div>Kaleo's Garage</div></div>
+        </div>
+        <div class="feat-card">
+            <div class="feat-grid-contents"><img src= "images/creative-artisan-job-workshop.jpg" style="width:100%" class="feat-grid-img feat-img"><div>Alice's Workshop</div></div>
+        </div>
+        <div class="feat-card">
+            <div class="feat-grid-contents"><img src= "images/modern-interior-design-office.jpg" style="width:100%" class="feat-grid-img feat-img"><div>Sheldon's Office Space</div>
+            </div>
+        </div>
+    </div>
+        <a class="prev" onclick="plusSlides(-1)"></a>
+        <a class="next" onclick="plusSlides(1)"></a>
+    </div>
+    <br>
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="#">View Spaces</a></li>
+                    <li><a href="#">Book a Space</a></li>
+                    <li><a href="#">List Your Space</a></li>
+                    <li><a href="#">Manage Bookings</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h5>Contact Us</h5>
+                <p>Email: support@makerhub.com</p>
+                <p>Phone: +1 234 567 890</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p class="text-center">© 2024 MakerHub. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
