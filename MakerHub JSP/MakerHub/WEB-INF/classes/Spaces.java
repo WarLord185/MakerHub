@@ -9,9 +9,9 @@ import java.text.SimpleDateFormat;
 public class Spaces extends DBConnect {
 
     // Method to get all Space Owners
-    public ArrayList<spaceOwner> getAllSpaceOwners() {
-        ArrayList<spaceOwner> spaceOwners = new ArrayList<>();
-        String sql = "SELECT * FROM 'Space Owner'";
+    public ArrayList<ManageSpaceOwner> getAllSpaceOwners() {
+        ArrayList<ManageSpaceOwner> spaceOwners = new ArrayList<>();
+        String sql = "SELECT * FROM `Space_Owner`";
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
         try {
@@ -19,7 +19,7 @@ public class Spaces extends DBConnect {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                spaceOwner owner = new spaceOwner();
+                ManageSpaceOwner owner = new ManageSpaceOwner();
                 owner.setOwnerID(rs.getInt("Owner_ID"));
                 owner.setName(rs.getString("Name"));
                 owner.setAddress(rs.getString("Address"));
@@ -30,8 +30,32 @@ public class Spaces extends DBConnect {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return spaceOwners;
     }
-}
 
+    public ArrayList<ManageSpaces> getAllSpaces() {
+        ArrayList<ManageSpaces> spaces = new ArrayList<>();
+        String sql = "SELECT * FROM `Space`";
+
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                ManageSpaces space = new ManageSpaces();
+                space.setSpaceID(rs.getInt("Space_ID"));
+                space.setSpaceName(rs.getString("space_Name"));  
+                space.setAddress(rs.getString("Address"));
+                space.setDescription(rs.getString("Description"));
+                space.setType(rs.getString("Type"));
+                space.setPrice(rs.getDouble("Price"));
+                space.setAvailability(rs.getBoolean("Availability"));
+                space.setOwnerID(rs.getInt("Owner_ID"));
+                spaces.add(space);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return spaces;
+    }
+}
