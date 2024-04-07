@@ -58,4 +58,28 @@ public class Spaces extends DBConnect {
         }
         return spaces;
     }
+
+    public ManagePicture getPictureForSpace(int spaceId) {
+        ManagePicture picture = null;
+        String sql = "SELECT * FROM `Picture` WHERE `Space_ID` = ?";
+
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1, spaceId);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                picture = new ManagePicture();
+                picture.setPicId(rs.getInt("Pic_ID"));
+                picture.setPicUrl(rs.getString("Pic_URL"));
+                picture.setUploadDate(rs.getDate("Upload_Date"));
+                picture.setCaption(rs.getString("Caption"));
+                picture.setSpaceId(rs.getInt("Space_ID"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return picture;
+    }
 }

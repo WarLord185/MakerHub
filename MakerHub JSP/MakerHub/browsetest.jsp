@@ -1,5 +1,6 @@
 <%@ page import="makerhub.Spaces" %>
 <%@ page import="makerhub.ManageSpaces" %>
+<%@ page import="makerhub.ManagePicture" %>
 <%@ page import="java.util.ArrayList" %>
 
 <!DOCTYPE html>
@@ -68,7 +69,9 @@
                 String title = space.getSpaceName();
                 String description = space.getDescription();
                 double price = space.getPrice();
-                String image = "images/1.jpg"; // Replace with your default image or add an image field in your ManageSpaces class
+                // String image = "images/1.jpg"; // Replace with your default image or add an image field in your ManageSpaces class
+                ManagePicture picture = spacesObj.getPictureForSpace(space.getSpaceID());
+                String image = picture != null ? "images/" + picture.getPicUrl() : "images/your-default-image.jpg";
         %>
         <div class="product-card">
             <div class="product-tumb">
