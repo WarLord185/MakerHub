@@ -26,7 +26,7 @@
         </svg>
     </div>
       <section>
-        <form action="success.jsp" method="post">
+        <form action="homepage.jsp" method="post">
         <div class="form-box">
           
             <div class="form-value">
