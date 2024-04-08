@@ -189,7 +189,7 @@ a {
         </div>
         <nav class="menu">
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="homepage.jsp">Home</a></li>
                 <li><a href="#">Bookings</a></li>
                 <li><a href="#">Profile</a></li>
                 <li><a href="aboutus.jsp">About Us</a></li>

@@ -9,7 +9,7 @@ public class MakerHub {
         
         insertUser i= new insertUser();
         
-        i.insertrenter("Sulin", "#6 Simpson Street Adeola Village","2021-12-01" , "796-0030");
+       
         
     }
                  
