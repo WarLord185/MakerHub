@@ -23,7 +23,7 @@
     <%
 
      
-      String name =request.getParameter("n");
+      String name =request.getParameter("name");
       String a =request.getParameter("add");
       String tele=request.getParameter("tel");
       String date =request.getParameter("DOB");

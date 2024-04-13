@@ -58,9 +58,9 @@ response.setDateHeader ("Expires", 0);
                         <label for=""><input type="checkbox">Remember Me</label>
                         <label for=""><a href="#">Forgot Password?</a></label> 
                     </div>
-                    <button>Log in</button>
+                    <button><a href= "homepage.jsp">Log in</a></button>
                     <div class="register">
-                        <p>Don't have an account? <label for=""><a href="#">Register</a></p></label>
+                        <p>Don't have an account? <label for=""><a href="register.jsp">Register</a></p></label>
                     </div>
                 </form>
             </div>

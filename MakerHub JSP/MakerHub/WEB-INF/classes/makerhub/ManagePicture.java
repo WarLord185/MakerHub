@@ -7,7 +7,6 @@ public class ManagePicture {
     private String caption;
     private int spaceId;
 
-    // Getters
     public int getPicId() {
         return picId;
     }
@@ -28,7 +27,6 @@ public class ManagePicture {
         return spaceId;
     }
 
-    // Setters
     public void setPicId(int picId) {
         this.picId = picId;
     }

@@ -82,4 +82,28 @@ public class Spaces extends DBConnect {
 
         return picture;
     }
+
+    public ArrayList<ManageRenter> getAllRenters() {
+        ArrayList<ManageRenter> renters = new ArrayList<>();
+        String sql = "SELECT * FROM `Renter`";
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                ManageRenter renter = new ManageRenter();
+                renter.setRenter_ID(rs.getInt("Renter_ID"));
+                renter.setName(rs.getString("Name"));
+                renter.setAddress(rs.getString("Address"));
+                renter.setDob(rs.getDate("DoB"));
+                renter.setPhone_Number(rs.getString("Phone_Number"));
+                renters.add(renter);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return renters;
+    }
 }
