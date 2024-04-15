@@ -13,7 +13,7 @@ public class ImageInsert {
             String query = "INSERT INTO Picture (Pic_ID, Pic_URL, UploadDate, Caption, Space_ID) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement pstmt = conn.prepareStatement(query);
 
-            for (int i = 1; i <= 17; i++) {
+            for (int i = 1; i <= 20; i++) {
                 pstmt.setInt(1, i);
                 pstmt.setString(2, i + ".jpg");
                 pstmt.setDate(3, new java.sql.Date(new Date().getTime()));

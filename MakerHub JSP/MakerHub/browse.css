@@ -123,6 +123,8 @@ a {
 }
 
 .product-card {
+        display: flex;
+        flex-direction: column;
     width: 380px;
     position: relative;
     /* box-shadow: 0 2px 7px #dfdfdf; */
@@ -203,6 +205,7 @@ a {
 }
 
 .product-bottom-details {
+        margin-top: auto;
     overflow: hidden;
     border-top: 1px solid #eee;
     padding-top: 20px;

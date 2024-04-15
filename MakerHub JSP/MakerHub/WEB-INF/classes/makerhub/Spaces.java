@@ -83,27 +83,29 @@ public class Spaces extends DBConnect {
         return picture;
     }
 
-    public ArrayList<ManageRenter> getAllRenters() {
-        ArrayList<ManageRenter> renters = new ArrayList<>();
-        String sql = "SELECT * FROM `Renter`";
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+    public ArrayList<ManageBooking> getAllBookings() {
+        ArrayList<ManageBooking> bookings = new ArrayList<>();
+        String sql = "SELECT * FROM `Booking`";
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                ManageRenter renter = new ManageRenter();
-                renter.setRenter_ID(rs.getInt("Renter_ID"));
-                renter.setName(rs.getString("Name"));
-                renter.setAddress(rs.getString("Address"));
-                renter.setDob(rs.getDate("DoB"));
-                renter.setPhone_Number(rs.getString("Phone_Number"));
-                renters.add(renter);
+                ManageBooking booking = new ManageBooking();
+                booking.setBooking_ID(rs.getInt("Booking_ID"));
+                booking.setRenter_ID(rs.getInt("Renter_ID"));
+                booking.setSpace_ID(rs.getInt("Space_ID"));
+                booking.setStatus(rs.getString("Status"));
+                booking.setBookingDate(rs.getDate("BookingDate"));
+                booking.setStartTime(rs.getTime("StartTime"));
+                booking.setEndTime(rs.getTime("EndTime"));
+                bookings.add(booking);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return renters;
+        return bookings;
     }
 }

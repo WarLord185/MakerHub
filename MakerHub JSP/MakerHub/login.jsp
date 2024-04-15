@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MakerHub</title>
     <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
 <%
@@ -41,6 +42,7 @@ response.setDateHeader ("Expires", 0);
                         </svg>
                         </div>
                         <%-- <ion-icon name="mail-outline"></ion-icon> --%>
+                        <i class="fas fa-envelope"></i>
                         <input type="email" required>
                         <label for="">Email</label>
                     </div>
@@ -51,6 +53,7 @@ response.setDateHeader ("Expires", 0);
                         </g>
                         </svg></div>
                         <%-- <ion-icon name="lock-closed-outline"></ion-icon> --%>
+                        <i class="fas fa-lock">
                         <input type="password" required>
                         <label for="">Password</label>
                     </div>
@@ -58,15 +61,13 @@ response.setDateHeader ("Expires", 0);
                         <label for=""><input type="checkbox">Remember Me</label>
                         <label for=""><a href="#">Forgot Password?</a></label> 
                     </div>
-                    <button><a href= "homepage.jsp">Log in</a></button>
+                    <button>Log in</button>
                     <div class="register">
-                        <p>Don't have an account? <label for=""><a href="register.jsp">Register</a></p></label>
+                        <p>Don't have an account? <label for=""><a href="#">Register</a></p></label>
                     </div>
                 </form>
             </div>
         </div>
     </section>
-    <%-- <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> --%>
 </body>
 </html>

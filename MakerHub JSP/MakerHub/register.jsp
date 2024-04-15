@@ -26,7 +26,7 @@
         </svg>
     </div>
       <section>
-        <form action="homepage.jsp" method="post">
+        <form action="success.jsp" method="post">
         <div class="form-box">
           
             <div class="form-value">
@@ -49,42 +49,36 @@
                        
                     </div>
                     <br><br>
-                    <label for="">name</label>
-                     <div class="inputbox">
-                        
-                        <input type="name" name="name"required>
-                        
-                     
-                    </div>
-                    
-                    <br><br>
-                    <label for="">Address</label>
-                     <div class="inputbox">
-                        
-                        <input type="address" name="add" required>
-                        
-                     
-                    </div>
-                    <br><br>
-                    <label for="">Tel number</label>
+                    <div class="inputbox">
+                          <input type="text" name="name" required>
+                          <label for="">Name</label>
+                      </div>
+                      <br><br>
                       <div class="inputbox">
-                        <input type="phone number" name="tel" required>
-                        
-                    </div>
-                    <br><br>
-                    
-                     <label for="">Date of Birth</label>
-                         <div class="inputbox">
-                        <input type="date" name="DOB" required>
-                        
-                    </div>
-
-                    
-                    <form action="success.jsp" method="post">
-                        <button type="submit">Register now</button>
+                          <input type="text" name="add" required>
+                          <label for="">Address</label>
+                      </div>
+                      <br><br>
+                      <div class="inputbox">
+                          <input type="tel" name="tel" required>
+                          <label for="">Tel number</label>
+                      </div>
+                      <br><br>
+                      <div class="inputbox">
+                          <input type="date" name="DOB" required>
+                          <label for="">Date of Birth</label>
+                      </div>
+                      <div class="inputbox">
+                          <select name="accountType" required>
+                              <option value="Owner">Owner</option>
+                              <option value="Renter">Renter</option>
+                          </select>
+                          <label for="">Account Type</label>
+                      </div>
+                      <br><br>
+                      <form action="success.jsp" method="post">
+                          <button type="submit">Register now</button>
                       </form>
-                      
-                        
                     </div>
                 </form>
             </div>

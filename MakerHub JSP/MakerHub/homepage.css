@@ -17,12 +17,26 @@ body {
 
 .header-container {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+
+.header-logo{
+    display: flex;
+    width: 3.3285rem;
+    height: 3.3285rem;
     align-items: center;
 }
 
 .brand h1 {
     margin: 0;
+    padding-left: 1rem;
+}
+
+.menu {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
 }
 
 .menu ul {

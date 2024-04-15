@@ -75,7 +75,7 @@ h2 {
     background-color: transparent;
 }
 
-.inputbox label {
+/* .inputbox label {
     position: absolute;
     top: 50%;
     left: 5px;
@@ -89,7 +89,7 @@ h2 {
 .inputbox input:focus ~ label,
 .inputbox input:valid ~ label{
     top: -12px;
-}
+} */
 
 .forget{
 display:flex ;
