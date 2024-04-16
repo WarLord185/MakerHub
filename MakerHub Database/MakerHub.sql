@@ -11,17 +11,33 @@ CREATE TABLE `Space_Owner` (
   `Account_Type` ENUM('Owner', 'Renter') DEFAULT 'Owner'
 );
 
+
+CREATE TABLE Category(
+CategoryID VARCHAR(20) NOT NULL,
+Name VARCHAR(100) NOT NULL,
+Description VARCHAR (250) NOT NULL,
+PRIMARY KEY(CategoryID)
+);
+
+
+
 CREATE TABLE `Space` (
-  `Space_ID` INT PRIMARY KEY,
+  `Space_ID` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `Space_Name` VARCHAR(255),
   `Address` VARCHAR(255),
-  `Description` VARCHAR(255),
+  `Description` VARCHAR(255) NOT NULL,
   `Type` VARCHAR(50),
   `Price` DECIMAL(10, 2),
-  `Availability` BOOLEAN,
+  `Availability` VARCHAR(40),
   `Owner_ID` INT,
-  FOREIGN KEY (`Owner_ID`) REFERENCES `Space_Owner`(`Owner_ID`)
+  Category_id VARCHAR (20) NOT NULL,
+  FOREIGN KEY (`Owner_ID`) REFERENCES `Space_Owner`(`Owner_ID`),
+  Foreign key (Category_id) REFERENCES Category (CategoryID)
 );
+
+
+
+
 
 CREATE TABLE `Renter` (
   `Renter_ID` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -85,13 +101,14 @@ CREATE TABLE `Login` (
     REFERENCES `Renter`(`Renter_ID`) 
     ON DELETE CASCADE ON UPDATE CASCADE
 );
-
+USE makerhub;
+SELECT * FROM category;
 SELECT * FROM Renter;
 SELECT * FROM Login;
 SELECT * FROM Space_Owner;
 SELECT * FROM picture;
 show tables;
-drop database makerhub;
+
 
 INSERT INTO `Space_Owner` (`Name`, `Address`, `Phone_Number`, `Email`, `DoB`, `Account_Type`) 
 VALUES ('Shastri', '3117 Helena Hill', '392-896-420', 'shastri.baboolal@gmail.com', '2003-05-18', 'Owner');
@@ -160,5 +177,14 @@ REPLACE INTO Space (Space_ID, Space_Name, Address, Description, Type, Price, Ava
 (19, 'Nienow, Morar and Donnelly', '18611 Randy Lane', 'Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.', 'Digital Media', 229.3, true),
 (20, 'Satterfield LLC', '8 Susan Hill', 'Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.', 'Textiles and Fashion', 438.5, true);
 
-DELETE FROM Picture WHERE Space_ID IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20);
+INSERT INTO Category VALUES('C1','Culinary Arts','to cook');
+INSERT INTO Category VALUES('C2','Arts and Crafts','to create art');
+INSERT INTO Category VALUES('C3','Textiles and Fashion','to create clothing');
+INSERT INTO Category VALUES('C4','Technology and Electronics','to create tech');
+INSERT INTO Category VALUES('C5','STEM','for STEM');
+INSERT INTO Category VALUES('C6','Mentalworking','to work with metal');
+INSERT INTO Category VALUES('C7','Digital Media','to work with software');
+INSERT INTO Category VALUES('C8','woodworking','to create with woods');
+INSERT INTO Category VALUES('C9','Gaming Music','to create music');
 
+DELETE FROM Picture WHERE Space_ID IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20);
