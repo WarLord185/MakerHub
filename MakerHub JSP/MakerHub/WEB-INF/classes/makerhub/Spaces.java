@@ -8,6 +8,10 @@ import java.text.SimpleDateFormat;
 
 public class Spaces extends DBConnect {
 
+       public Spaces(){
+           
+       }
+
     // Method to get all Space Owners
     public ArrayList<ManageSpaceOwner> getAllSpaceOwners() {
         ArrayList<ManageSpaceOwner> spaceOwners = new ArrayList<>();
@@ -108,4 +112,32 @@ public class Spaces extends DBConnect {
         }
         return bookings;
     }
+    
+      public int insertSpace(String n, String a, String av ,String t, String p, String oi, String cId){
+    	int rows = 0;
+
+		try{
+    		String insertStmt = "insert into space values(null,?,?,null,?,?,?,?,?)";
+        	PreparedStatement stmt = conn.prepareStatement(insertStmt);
+
+               
+        	stmt.setString(1, n);
+        	stmt.setString(2, a);
+      		stmt.setString(3, av);
+                stmt.setString(4, t);
+                stmt.setString(5, p);
+                stmt.setString(6, oi);
+                stmt.setString(7, cId);
+                
+
+      		rows = stmt.executeUpdate();
+      		
+		}
+
+		catch (SQLException e) {
+			System.out.println("ERROR - insertSpace()" +  e.getMessage());
+		}
+
+		return rows;
+	}
 }
