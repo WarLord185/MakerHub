@@ -113,21 +113,22 @@ public class Spaces extends DBConnect {
         return bookings;
     }
     
-      public int insertSpace(String n, String a, String av ,String t, String p, String oi, String cId){
+     public int insertSpace(String n, String a, String d, String av ,String t, String p, String oi, String cId){
     	int rows = 0;
 
 		try{
-    		String insertStmt = "insert into space values(null,?,?,null,?,?,?,?,?)";
+    		String insertStmt = "insert into space values(null,?,?,?,?,?,?,?,?)";
         	PreparedStatement stmt = conn.prepareStatement(insertStmt);
 
                
         	stmt.setString(1, n);
         	stmt.setString(2, a);
-      		stmt.setString(3, av);
-                stmt.setString(4, t);
-                stmt.setString(5, p);
-                stmt.setString(6, oi);
-                stmt.setString(7, cId);
+      		stmt.setString(3, d);
+      		stmt.setString(4, av);
+                stmt.setString(5, t);
+                stmt.setString(6, p);
+                stmt.setString(7, oi);
+                stmt.setString(8, cId);
                 
 
       		rows = stmt.executeUpdate();
@@ -139,5 +140,28 @@ public class Spaces extends DBConnect {
 		}
 
 		return rows;
+	}
+	  public ArrayList<Category> getCategories(){
+		ArrayList<Category> list = new ArrayList<Category>();
+ 
+               
+		try{
+			String query = "select * from category";
+        	PreparedStatement stmt = conn.prepareStatement(query);
+        	ResultSet rs = stmt.executeQuery();
+
+        	while (rs.next()){
+				Category c = new Category();
+				c.id = rs.getString("CategoryID");
+        		c.name = rs.getString("Name");
+        		c.description = rs.getString("Description");
+        		list.add(c);
+        	}
+		}
+		catch (SQLException e) {
+			System.out.println("ERROR - getCategories()" + e.getMessage());
+		}
+
+		return list;
 	}
 }
