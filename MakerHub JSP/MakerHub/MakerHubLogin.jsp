@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./MakerHubLogin.css">
     <script src=""></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="images/MakerHub_Logo_Small200.svg">
     <script>
     function unsuccessfulPopup() {
     alert("Login Failed");

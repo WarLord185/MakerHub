@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MakerHub</title>
     <link rel="stylesheet" href="homepage.css">
+    <link rel="icon" type="image/x-icon" href="images/MakerHub_Logo_Small200.svg">
     <script src="homepage.js"></script>
 </head>
 <body>

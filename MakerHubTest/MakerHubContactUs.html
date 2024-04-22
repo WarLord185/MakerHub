@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MakerHub</title>
-    <link rel="stylesheet" href="browse.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" type="image/x-icon" href="images/MakerHub_Logo_Small200.svg">
-    <script src=""></script>
+    <link rel="stylesheet" href="MakerHubContactUs.css">
+    <link rel="icon" type="image/x-icon" href="MakerHub_Logo_Small200.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- <script src="Blank.js"></script> -->
 </head>
 <body>
 
@@ -43,42 +43,35 @@
         </div>
         <nav class="menu">
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="homepage.jsp">Home</a></li>
                 <li><a href="#">Bookings</a></li>
-                <li><a href="#">About Us</a></li>
+                <li><a href="aboutus.jsp">About Us</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
         </nav>
         <div class="user-links">
-            <a href="#">Login</a>
-            <a href="#">Sign Up</a>
+            <a href="./MakerHubLogin.jsp">Login</a>
+            <a href="./MakerHubRegister.jsp">Sign Up</a>
         </div>
     </div>
 </header>
 
-<div class="card-container">
-<div class="product-card">
-    <!-- <div class="badge">Hot</div> -->
-    <div class="product-tumb">
-        <img src="images/creative-artisan-job-workshop.jpg" alt="">
-    </div>
-    <div class="product-details">
-        <span class="product-catagory">Carpentry, WoodWorking</span>
-        <h4><a href="">Sunil WoodWorking</a></h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
-        <div class="product-bottom-details">
-            <!-- <div class="product-price"><small>$96.00</small>$230.99</div> -->
-            <div class="product-price">$230.99 /hr</div>
-            <div class="product-links">
-                <a href=""><i class="fa fa-heart"></i></a>
-                <!-- <a href=""><i class="fa fa-shopping-cart"></i></a> -->
-            </div>
+<main>
+        <h1 style="color:white;">Let's talk</h1>
+        <p style="color:white;">Ask us anything or just say hi...</p>
+        <div>
+            <i class="fas fa-phone"></i>
+            <p style="color:white;">Your Phone Number</p>
+            <i class="fas fa-envelope"></i>
+            <p style="color:white;">Your Email Address</p>
         </div>
-    </div>
-</div>
-
-</div>
-<!-- Product Card Ends Here -->
+        <form>
+            <input type="text" id="name" name="name" placeholder="Name">
+            <input type="email" id="email" name="email" placeholder="Email">
+            <textarea id="message" name="message" placeholder="Message"></textarea>
+            <input type="submit" value="Send">
+        </form>
+    </main>
 
 <footer>
     <div class="container">
