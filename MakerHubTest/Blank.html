@@ -41,15 +41,15 @@
         </div>
         <nav class="menu">
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="homepage.jsp">Home</a></li>
                 <li><a href="#">Bookings</a></li>
-                <li><a href="#">About Us</a></li>
+                <li><a href="aboutus.jsp">About Us</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
         </nav>
         <div class="user-links">
-            <a href="#">Login</a>
-            <a href="#">Sign Up</a>
+            <a href="./MakerHubLogin.jsp">Login</a>
+            <a href="./MakerHubRegister.jsp">Sign Up</a>
         </div>
     </div>
 </header>
