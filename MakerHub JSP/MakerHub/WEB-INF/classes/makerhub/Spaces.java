@@ -113,22 +113,22 @@ public class Spaces extends DBConnect {
         return bookings;
     }
     
-     public int insertSpace(String n, String a, String d, String av ,String t, String p, String oi, String cId){
+     public int insertSpace(String name, String address, String description ,String type,String av, String price, String owner){
     	int rows = 0;
 
 		try{
-    		String insertStmt = "insert into space values(null,?,?,?,?,?,?,?,?)";
+    		String insertStmt = "insert into space values(null,?,?,?,?,?,?,?)";
         	PreparedStatement stmt = conn.prepareStatement(insertStmt);
 
                
-        	stmt.setString(1, n);
-        	stmt.setString(2, a);
-      		stmt.setString(3, d);
-      		stmt.setString(4, av);
-                stmt.setString(5, t);
-                stmt.setString(6, p);
-                stmt.setString(7, oi);
-                stmt.setString(8, cId);
+        	stmt.setString(1, name);
+        	stmt.setString(2, address);
+      		stmt.setString(3, description);
+                stmt.setString(4, type);
+                stmt.setString(5, av);
+                stmt.setString(6, price);
+                stmt.setString(7, owner);
+                
                 
 
       		rows = stmt.executeUpdate();
@@ -164,4 +164,32 @@ public class Spaces extends DBConnect {
 
 		return list;
 	}
+          
+          public ArrayList<Owner> getOwner(){
+          ArrayList<Owner> owneri= new ArrayList<Owner>();
+          
+          try{
+          String query1 ="Select * Space_Owner";
+          PreparedStatement stmt= conn.prepareStatement(query1);
+          ResultSet rs=stmt.executeQuery();
+          
+          while(rs.next()){
+          Owner o = new Owner();
+          o.id=rs.getString("Owner_ID");
+          o.name= rs.getString("Name");
+          o.add=rs.getString("Address");
+          o.no=rs.getString("Phone_Number");
+          o.mail=rs.getString("Email");
+          o.dob=rs.getString("DoB");
+          o.type=rs.getString("Account_Type");
+          owneri.add(o);
+                  
+          }
+          }
+          catch (SQLException e) {
+			System.out.println("ERROR - getOwner()" + e.getMessage());
+		}
+          return owneri;
+
+          }
 }
