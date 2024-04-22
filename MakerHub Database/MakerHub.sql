@@ -11,15 +11,12 @@ CREATE TABLE `Space_Owner` (
   `Account_Type` ENUM('Owner', 'Renter') DEFAULT 'Owner'
 );
 
-
 CREATE TABLE Category(
 CategoryID VARCHAR(20) NOT NULL,
 Name VARCHAR(100) NOT NULL,
 Description VARCHAR (250) NOT NULL,
 PRIMARY KEY(CategoryID)
 );
-
-
 
 CREATE TABLE `Space` (
   `Space_ID` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -30,14 +27,10 @@ CREATE TABLE `Space` (
   `Price` DECIMAL(10, 2),
   `Availability` VARCHAR(40),
   `Owner_ID` INT,
-  Category_id VARCHAR (20) NOT NULL,
+  `Category_id` VARCHAR (20) NOT NULL,
   FOREIGN KEY (`Owner_ID`) REFERENCES `Space_Owner`(`Owner_ID`),
   Foreign key (Category_id) REFERENCES Category (CategoryID)
 );
-
-
-
-
 
 CREATE TABLE `Renter` (
   `Renter_ID` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -101,6 +94,8 @@ CREATE TABLE `Login` (
     REFERENCES `Renter`(`Renter_ID`) 
     ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+
 USE makerhub;
 SELECT * FROM category;
 SELECT * FROM Renter;
@@ -108,6 +103,7 @@ SELECT * FROM Login;
 SELECT * FROM Space_Owner;
 SELECT * FROM picture;
 show tables;
+Drop database Makerhub;
 
 
 INSERT INTO `Space_Owner` (`Name`, `Address`, `Phone_Number`, `Email`, `DoB`, `Account_Type`) 
