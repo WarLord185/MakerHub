@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +15,8 @@
         Dashboard</a>
         <a href="#" class="icon-a"><i class="fa fa-archive icons"></i>&nbsp;&nbsp;
         My Spaces</a>
+        <a href="insertspace.jsp" class="icon-a"><i class="fa fa-plus-circle icons"></i>&nbsp;&nbsp;
+        Insert Spaces</a>
         <a href="Booking.jsp" class="icon-a"><i class="fa fa-calendar icons"></i>&nbsp;&nbsp;
         Bookings</a>
         <a href="homepage.jsp" class="icon-a"><i class="fa fa-user icons"></i>&nbsp;&nbsp;
