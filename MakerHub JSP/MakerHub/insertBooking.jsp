@@ -71,17 +71,17 @@
             </div>
     
             <div class="inputbox">
-                <label for="stat"><i class="fa fa-clock-o"></i> Status </label>
+                <label for="stat"><i class="fa fa-sticky-note"></i> Status </label>
                 <input type="text" name="stat" id="stat" required>
             </div>
     
             <div class="inputbox">
-                <label for="from"><i class="fa fa-clock-o"></i> From </label>
+                <label for="from"><i class="fa fa-clock"></i> From </label>
                 <input type="text" name="from" id="from" required>
             </div>
     
             <div class="inputbox">
-                <label for="to"><i class="fas fa-map-marker-alt"></i> To </label>
+                <label for="to"><i class="fa fa-clock"></i> To </label>
                 <input type="text" name="to" id="to" required>
             </div>
     
