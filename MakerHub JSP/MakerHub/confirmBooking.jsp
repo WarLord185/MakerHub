@@ -26,13 +26,9 @@
         </div>
     <%
       } else {
-    %>
-        <h2 class="heading2"> Space Booked </h2>
-        <div id="section2">
-          The following has been booked: <%= space_id %>
-        </div>
-    <%
+      response.sendRedirect("homepage.jsp");
       }
     %>
   </body>
 </html>
+
