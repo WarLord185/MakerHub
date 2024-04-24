@@ -89,7 +89,7 @@ public class Spaces extends DBConnect {
 
     public ArrayList<ManageBooking> getAllBookings() {
         ArrayList<ManageBooking> bookings = new ArrayList<>();
-        String sql = "SELECT * FROM `Booking`";
+        String sql = "SELECT * FROM `Booking`  ";
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
         try {
@@ -98,13 +98,13 @@ public class Spaces extends DBConnect {
 
             while (rs.next()) {
                 ManageBooking booking = new ManageBooking();
-                booking.setBooking_ID(rs.getInt("Booking_ID"));
-                booking.setRenter_ID(rs.getInt("Renter_ID"));
-                booking.setSpace_ID(rs.getInt("Space_ID"));
-                booking.setStatus(rs.getString("Status"));
-                booking.setBookingDate(rs.getDate("BookingDate"));
-                booking.setStartTime(rs.getTime("StartTime"));
-                booking.setEndTime(rs.getTime("EndTime"));
+                booking.booking_ID=rs.getInt("Booking_ID");
+                booking.renter_ID=rs.getInt("Renter_ID");
+                booking.space_ID=rs.getInt("Space_ID");
+                booking.status=rs.getString("Status");
+                booking.bookingDate=rs.getDate("BookingDate");
+                booking.startTime=rs.getTime("StartTime");
+                booking.endTime=rs.getTime("EndTime");
                 bookings.add(booking);
             }
         } catch (SQLException e) {
@@ -113,11 +113,13 @@ public class Spaces extends DBConnect {
         return bookings;
     }
     
-     public int insertSpace(String name, String address, String description ,String type,String av, String price, String owner){
+    
+    
+     public int insertSpace(String name, String address, String description ,String type,String price, String av){
     	int rows = 0;
 
 		try{
-    		String insertStmt = "insert into space values(null,?,?,?,?,?,?,?)";
+    		String insertStmt = "insert into space values(null,?,?,?,?,?,?,null)";
         	PreparedStatement stmt = conn.prepareStatement(insertStmt);
 
                
@@ -125,9 +127,9 @@ public class Spaces extends DBConnect {
         	stmt.setString(2, address);
       		stmt.setString(3, description);
                 stmt.setString(4, type);
-                stmt.setString(5, av);
-                stmt.setString(6, price);
-                stmt.setString(7, owner);
+                stmt.setString(5, price);
+                stmt.setString(6, av);
+               
                 
                 
 
@@ -141,6 +143,31 @@ public class Spaces extends DBConnect {
 
 		return rows;
 	}
+     
+      public ManageSpaces getspaceid(String name) {
+        ManageSpaces id = null;
+        String sql = "SELECT * FROM `Space` WHERE `Space_Name = ?";
+
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, name);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                id = new ManageSpaces();
+                id.spaceID=rs.getInt("Space_ID");
+              
+            }
+        } catch (SQLException e) {
+           System.out.println("ERROR - getspaceid()" + e.getMessage());
+        }
+
+        return id;
+    }
+     
+     
+     
+     
 	  public ArrayList<Category> getCategories(){
 		ArrayList<Category> list = new ArrayList<Category>();
  
@@ -192,4 +219,80 @@ public class Spaces extends DBConnect {
           return owneri;
 
           }
+           public ManageSpaces getOwnerSpaces(String id) {
+        ManageSpaces em = null;
+        String sql = "SELECT * FROM `Space` WHERE `Owner_ID` = ? ";
+
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, id);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                em = new ManageSpaces();
+                em.space_Name=rs.getString("Space_Name");
+                em.address=rs.getString("Address");
+                em.description=rs.getString("Description");
+               em.type=rs.getString("Type");
+                em.price=rs.getDouble("Price");
+                 em.availability=rs.getBoolean("Availability");
+                  em.ownerID=rs.getInt("Owner_ID");
+            }
+        } catch (SQLException e) {
+            System.out.println("ERROR - getOwnerSpaces()" + e.getMessage());
+        }
+
+        return em;
+    }
+             public ManageBooking getOwnerbookings(int id) {
+        ManageBooking book = null;
+        String sql = "SELECT * FROM `Booking` WHERE `Owner_ID` = ? ";
+
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                book = new ManageBooking();
+                book.booking_ID=rs.getInt("Booking_ID");
+                book.renter_ID=rs.getInt("Renter_ID");
+                book.space_ID=rs.getInt("Space_ID");
+               book.status=rs.getString("Status");
+                book.bookingDate=rs.getDate("BookingDate");
+                 book.startTime=rs.getTime("StartTime");
+                  book.endTime=rs.getTime("EndTime");
+            }
+        } catch (SQLException e) {
+            System.out.println("ERROR - getOwnerbookings()" + e.getMessage());
+        }
+
+        return book;
+    }
+                 public ManageSpaceOwner getOwnerid(String name) {
+        ManageSpaceOwner oid = null;
+        String sql = "SELECT * FROM `Space_Owner` WHERE `Name = ?";
+
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, name);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                oid = new ManageSpaceOwner();
+                oid.ownerID=rs.getInt("Owner_ID");
+              
+            }
+        } catch (SQLException e) {
+           System.out.println("ERROR - getOwnerid()" + e.getMessage());
+        }
+
+        return oid;
+                 
+        
+    }
+                   
+        
+     
+           
 }
