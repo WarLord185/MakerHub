@@ -1,3 +1,8 @@
+<%@ page import="makerhub.Spaces" %>
+<%@ page import="makerhub.ManageSpaces" %>
+<%@ page import="makerhub.ManagePicture" %>
+<%@ page import="java.util.ArrayList" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +15,6 @@
     <script src=""></script>
 </head>
 <body>
-
 <header>
     <div class="header-container">
         <div class="header-logo">
@@ -56,29 +60,40 @@
     </div>
 </header>
 
-<div class="card-container">
-<div class="product-card">
-    <!-- <div class="badge">Hot</div> -->
-    <div class="product-tumb">
-        <img src="images/creative-artisan-job-workshop.jpg" alt="">
-    </div>
-    <div class="product-details">
-        <span class="product-catagory">Carpentry, WoodWorking</span>
-        <h4><a href="">Sunil WoodWorking</a></h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
-        <div class="product-bottom-details">
-            <!-- <div class="product-price"><small>$96.00</small>$230.99</div> -->
-            <div class="product-price">$230.99 /hr</div>
-            <div class="product-links">
-                <a href=""><i class="fa fa-heart"></i></a>
-                <!-- <a href=""><i class="fa fa-shopping-cart"></i></a> -->
+    <div class="card-container">
+        <%
+            Spaces spacesObj = new Spaces();
+            ArrayList<ManageSpaces> spaces = spacesObj.getAllSpaces();
+
+            for (ManageSpaces space : spaces) {
+                String type = space.getType();
+                String title = space.getSpaceName();
+                String description = space.getDescription();
+                double price = space.getPrice();
+                // String image = "images/1.jpg"; // Replace with your default image or add an image field in your ManageSpaces class
+                ManagePicture picture = spacesObj.getPictureForSpace(space.getSpaceID());
+                String image = picture != null ? "images/" + picture.getPicUrl() : "images/your-default-image.jpg";
+        %>
+        <div class="product-card">
+            <div class="product-tumb">
+                <img src="<%=image%>" alt="">
+            </div>
+            <div class="product-details">
+                <span class="product-catagory"><%=type%></span>
+                <h4><a href=""><%=title%></a></h4>
+                <p><%=description%></p>
+                <div class="product-bottom-details">
+                    <div class="product-price">$<%=price%> /hr</div>
+                    <div class="product-links">
+                        <a href=""><i class="fa fa-heart"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
+        <%
+            }
+        %>
     </div>
-</div>
-
-</div>
-<!-- Product Card Ends Here -->
 
 <footer>
     <div class="container">

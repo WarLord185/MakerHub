@@ -45,10 +45,10 @@ public class Spaces extends DBConnect {
             PreparedStatement ps = conn.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
 
-            while (rs.next()) {
+            if (rs.next()) {
                 ManageSpaces space = new ManageSpaces();
                 space.setSpaceID(rs.getInt("Space_ID"));
-                space.setSpaceName(rs.getString("space_Name"));  
+                space.setSpaceName(rs.getString("Space_Name"));  
                 space.setAddress(rs.getString("Address"));
                 space.setDescription(rs.getString("Description"));
                 space.setType(rs.getString("Type"));
@@ -112,42 +112,29 @@ public class Spaces extends DBConnect {
         }
         return bookings;
     }
-    
-    
-    
-     public int insertSpace(String name, String address, String description ,String type,String price, String av){
+
+    public int insertSpace(String name, String address, String description ,String type,String price, String av){
     	int rows = 0;
 
 		try{
     		String insertStmt = "insert into space values(null,?,?,?,?,?,?,null)";
-        	PreparedStatement stmt = conn.prepareStatement(insertStmt);
-
-               
+        	PreparedStatement stmt = conn.prepareStatement(insertStmt);      
         	stmt.setString(1, name);
         	stmt.setString(2, address);
       		stmt.setString(3, description);
-                stmt.setString(4, type);
-                stmt.setString(5, price);
-                stmt.setString(6, av);
-               
-                
-                
-
+            stmt.setString(4, type);
+            stmt.setString(5, price);
+            stmt.setString(6, av);
       		rows = stmt.executeUpdate();
-      		
 		}
-
 		catch (SQLException e) {
 			System.out.println("ERROR - insertSpace()" +  e.getMessage());
 		}
-
 		return rows;
 	}
-     
       public ManageSpaces getspaceid(String name) {
         ManageSpaces id = null;
         String sql = "SELECT * FROM `Space` WHERE `Space_Name = ?";
-
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, name);
@@ -161,15 +148,11 @@ public class Spaces extends DBConnect {
         } catch (SQLException e) {
            System.out.println("ERROR - getspaceid()" + e.getMessage());
         }
-
         return id;
     }
-     
-     
-     
-     
-	  public ArrayList<Category> getCategories(){
-		ArrayList<Category> list = new ArrayList<Category>();
+
+	public ArrayList<Category> getCategories(){
+	    ArrayList<Category> list = new ArrayList<Category>();
  
                
 		try{
@@ -188,38 +171,34 @@ public class Spaces extends DBConnect {
 		catch (SQLException e) {
 			System.out.println("ERROR - getCategories()" + e.getMessage());
 		}
-
 		return list;
 	}
-          
-          public ArrayList<Owner> getOwner(){
-          ArrayList<Owner> owneri= new ArrayList<Owner>();
-          
-          try{
-          String query1 ="Select * Space_Owner";
-          PreparedStatement stmt= conn.prepareStatement(query1);
-          ResultSet rs=stmt.executeQuery();
-          
-          while(rs.next()){
-          Owner o = new Owner();
-          o.id=rs.getString("Owner_ID");
-          o.name= rs.getString("Name");
-          o.add=rs.getString("Address");
-          o.no=rs.getString("Phone_Number");
-          o.mail=rs.getString("Email");
-          o.dob=rs.getString("DoB");
-          o.type=rs.getString("Account_Type");
-          owneri.add(o);
-                  
-          }
-          }
-          catch (SQLException e) {
-			System.out.println("ERROR - getOwner()" + e.getMessage());
+        public ArrayList<Owner> getOwner(){
+        ArrayList<Owner> owneri= new ArrayList<Owner>();
+            try{
+            String query1 ="Select * Space_Owner";
+            PreparedStatement stmt= conn.prepareStatement(query1);
+            ResultSet rs=stmt.executeQuery();
+            while(rs.next()){
+            Owner o = new Owner();
+            o.id=rs.getString("Owner_ID");
+            o.name= rs.getString("Name");
+            o.add=rs.getString("Address");
+            o.no=rs.getString("Phone_Number");
+            o.mail=rs.getString("Email");
+            o.dob=rs.getString("DoB");
+            o.type=rs.getString("Account_Type");
+            owneri.add(o);  
+            }
+            }
+            catch (SQLException e) {
+			    System.out.println("ERROR - getOwner()" + e.getMessage());
 		}
-          return owneri;
+            return owneri;
 
-          }
-           public ManageSpaces getOwnerSpaces(String id) {
+        }
+
+        public ManageSpaces getOwnerSpaces(String id) {
         ManageSpaces em = null;
         String sql = "SELECT * FROM `Space` WHERE `Owner_ID` = ? ";
 
@@ -233,18 +212,18 @@ public class Spaces extends DBConnect {
                 em.space_Name=rs.getString("Space_Name");
                 em.address=rs.getString("Address");
                 em.description=rs.getString("Description");
-               em.type=rs.getString("Type");
+                em.type=rs.getString("Type");
                 em.price=rs.getDouble("Price");
-                 em.availability=rs.getBoolean("Availability");
-                  em.ownerID=rs.getInt("Owner_ID");
+                em.availability=rs.getBoolean("Availability");
+                em.ownerID=rs.getInt("Owner_ID");
             }
         } catch (SQLException e) {
             System.out.println("ERROR - getOwnerSpaces()" + e.getMessage());
         }
-
         return em;
-    }
-             public ManageBooking getOwnerbookings(int id) {
+        }
+
+        public ManageBooking getOwnerbookings(int id) {
         ManageBooking book = null;
         String sql = "SELECT * FROM `Booking` WHERE `Owner_ID` = ? ";
 
@@ -258,41 +237,31 @@ public class Spaces extends DBConnect {
                 book.booking_ID=rs.getInt("Booking_ID");
                 book.renter_ID=rs.getInt("Renter_ID");
                 book.space_ID=rs.getInt("Space_ID");
-               book.status=rs.getString("Status");
+                book.status=rs.getString("Status");
                 book.bookingDate=rs.getDate("BookingDate");
-                 book.startTime=rs.getTime("StartTime");
-                  book.endTime=rs.getTime("EndTime");
+                book.startTime=rs.getTime("StartTime");
+                book.endTime=rs.getTime("EndTime");
             }
         } catch (SQLException e) {
             System.out.println("ERROR - getOwnerbookings()" + e.getMessage());
         }
-
         return book;
-    }
-                 public ManageSpaceOwner getOwnerid(String name) {
+        }
+
+        public ManageSpaceOwner getOwnerid(String name) {
         ManageSpaceOwner oid = null;
         String sql = "SELECT * FROM `Space_Owner` WHERE `Name = ?";
-
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, name);
             ResultSet rs = ps.executeQuery();
-
             if (rs.next()) {
                 oid = new ManageSpaceOwner();
                 oid.ownerID=rs.getInt("Owner_ID");
-              
             }
         } catch (SQLException e) {
            System.out.println("ERROR - getOwnerid()" + e.getMessage());
         }
-
         return oid;
-                 
-        
-    }
-                   
-        
-     
-           
+    }    
 }
