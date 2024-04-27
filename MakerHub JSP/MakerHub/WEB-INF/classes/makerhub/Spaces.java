@@ -83,7 +83,6 @@ public class Spaces extends DBConnect {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return picture;
     }
 
@@ -175,20 +174,22 @@ public class Spaces extends DBConnect {
 	}
         public ArrayList<Owner> getOwner(){
         ArrayList<Owner> owneri= new ArrayList<Owner>();
+
             try{
             String query1 ="Select * Space_Owner";
             PreparedStatement stmt= conn.prepareStatement(query1);
             ResultSet rs=stmt.executeQuery();
+
             while(rs.next()){
-            Owner o = new Owner();
-            o.id=rs.getString("Owner_ID");
-            o.name= rs.getString("Name");
-            o.add=rs.getString("Address");
-            o.no=rs.getString("Phone_Number");
-            o.mail=rs.getString("Email");
-            o.dob=rs.getString("DoB");
-            o.type=rs.getString("Account_Type");
-            owneri.add(o);  
+                Owner o = new Owner();
+                o.id=rs.getString("Owner_ID");
+                o.name= rs.getString("Name");
+                o.add=rs.getString("Address");
+                o.no=rs.getString("Phone_Number");
+                o.mail=rs.getString("Email");
+                o.dob=rs.getString("DoB");
+                o.type=rs.getString("Account_Type");
+                owneri.add(o);  
             }
             }
             catch (SQLException e) {
