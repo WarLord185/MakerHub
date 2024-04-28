@@ -1,14 +1,14 @@
 package makerhub;
 
 public class ManageSpaces {
-    int spaceID;
-    String space_Name;
-    String address;
-    String description;
-    String type;
-    double price;
-    boolean availability;
-    int ownerID;
+    public int spaceID;
+    public String space_Name;
+    public String address;
+    public String description;
+    public String type;
+    public double price;
+    public boolean availability;
+    public int ownerID;
 
     // Getter and Setter for Space_ID
     public int getSpaceID() {

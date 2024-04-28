@@ -67,7 +67,7 @@
     <div class ="feat-head">
         <h2>Featured Spaces</h2>
     </div>
-    <div class="feat-grid-container">
+    <%-- <div class="feat-grid-container">
         <div class="feat-card">
             <div class="feat-grid-contents"><img src= "images/beautiful-girl-with-long-hair-garage-repairing-motorcycle.jpg " style="width:100%" class="feat-grid-img feat-img"><div>Kaleo's Garage</div></div>
         </div>
@@ -87,7 +87,50 @@
         <span class="dot" onclick="currentSlide(1)"></span> 
         <span class="dot" onclick="currentSlide(2)"></span> 
         <span class="dot" onclick="currentSlide(3)"></span> 
+    </div> --%>
+
+    <div class="card-container">
+    <%@ page import="makerhub.Spaces" %>
+    <%@ page import="makerhub.ManageSpaces" %>
+    <%@ page import="makerhub.ManagePicture" %>
+    <%@ page import="java.util.ArrayList" %>
+    <%
+        Spaces spacesObj = new Spaces();
+        ArrayList<ManageSpaces> spaces = spacesObj.getAllSpaces();
+        int count = 0; // Add a counter
+
+        for (ManageSpaces space : spaces) {
+            if (count >= 3) break; // Stop the loop after 3 spaces
+
+            String type = space.getType();
+            String title = space.getSpaceName();
+            String description = space.getDescription();
+            double price = space.getPrice();
+            ManagePicture picture = spacesObj.getPictureForSpace(space.getSpaceID());
+            String image = picture != null ? "images/" + picture.getPicUrl() : "images/your-default-image.jpg";
+    %>
+    <div class="product-card">
+        <div class="product-tumb">
+            <img src="<%=image%>" alt="">
+        </div>
+        <div class="product-details">
+            <span class="product-catagory"><%=type%></span>
+            <h4><a href=""><%=title%></a></h4>
+            <p><%=description%></p>
+            <div class="product-bottom-details">
+                <div class="product-price">$<%=price%> /hr</div>
+                <div class="product-links">
+                    <a href=""><i class="fa fa-heart"></i></a>
+                </div>
+            </div>
+        </div>
     </div>
+    <%
+        count++; // Increment the counter
+        }
+    %>
+</div>
+
 
 <footer>
     <div class="container">
