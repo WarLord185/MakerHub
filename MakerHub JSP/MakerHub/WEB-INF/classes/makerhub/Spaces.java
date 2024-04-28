@@ -53,7 +53,8 @@ public class Spaces extends DBConnect {
                 space.setDescription(rs.getString("Description"));
                 space.setType(rs.getString("Type"));
                 space.setPrice(rs.getDouble("Price"));
-                space.setAvailability(rs.getBoolean("Availability"));
+                String availability = rs.getString("Availability");
+                space.setAvailability("yes".equalsIgnoreCase(availability)); // Convert string to boolean
                 space.setOwnerID(rs.getInt("Owner_ID"));
                 spaces.add(space);
             }
