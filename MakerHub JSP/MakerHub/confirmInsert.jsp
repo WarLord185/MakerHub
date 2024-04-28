@@ -47,12 +47,16 @@
       String category =request.getParameter("ct");
       String av =request.getParameter("av");
       String Price= request.getParameter("price");
-      String Owner= request.getParameter("oi");
+      String uname= request.getParameter("uname");
     
 
       Spaces m = new Spaces();
 
-      int r =  m.insertSpace(name, address, Description, category, price, av,  Owner);                 
+      int r =  m.insertSpace(name, address, Description, category, Price, av);      
+      
+      ManageSpaces t = m.getspaceid(name);
+
+      ManageSpaceOwner i = m.getOwnerid(uname);
     %>
       
       <br> <br>
@@ -62,7 +66,7 @@
         <%
           if(r <= 0){
         %>
-          <h2> class="col-div-3"> Insert UNSUCCESSFUL</h2>
+          <h2> <class="col-div-3"> Insert UNSUCCESSFUL</class></h2>
           <div id="section2">
               Space not added!!
           </div>
@@ -74,6 +78,10 @@
         <h2 class="col-div-3"> Insert SUCCESSFUL!! </h2>
         <div id="section2">
              The following has been added: <%= name %>
+             <br>
+             your Space id is: <%= t %>
+             <br>
+             ownerid: <%=i%>
         </div>
       <%
           }
