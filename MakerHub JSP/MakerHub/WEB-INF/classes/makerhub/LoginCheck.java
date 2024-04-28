@@ -56,4 +56,23 @@ public class LoginCheck extends DBConnect{
         }
         return false;
     }
+        public String getType(String name) {
+        String userType = "invalid";
+
+        try {
+            String query = "SELECT * FROM Login WHERE Username = ?";
+            PreparedStatement statement = conn.prepareStatement(query);
+            statement.setString(1, name);
+
+            ResultSet resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                userType = resultSet.getString("Account_Type");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error encountered executing getType(): " + e.getMessage());
+        }
+
+        return userType;
+    }
 }
