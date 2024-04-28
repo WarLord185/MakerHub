@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MakerHub</title>
-    <link rel="stylesheet" href="homepage.css">
-    <link rel="icon" type="image/x-icon" href="images/MakerHub_Logo_Small200.svg">
-    <script src="homepage.js"></script>
+    <link rel="stylesheet" href="MakerHubContactUs.css">
+    <link rel="icon" type="image/x-icon" href="MakerHub_Logo_Small200.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- <script src="Blank.js"></script> -->
 </head>
 <body>
 
@@ -38,7 +39,7 @@
             </svg>
         </div>
         <div class="brand">
-            <h1><a href="homepage.jsp">MakerHub</a></h1>
+            <h1><a href="#">MakerHub</a></h1>
         </div>
         <nav class="menu">
             <ul>
@@ -55,82 +56,22 @@
     </div>
 </header>
 
-<div class="banner">
-    <img src="images/banner-image.jpg" alt="Banner Image">
-    <div class="search-overlay">
-        <input type="text" placeholder="Search...">
-        <button>Search</button>
-    </div>
-</div>
-
-<div class="feat-container">
-    <div class ="feat-head">
-        <h2>Featured Spaces</h2>
-    </div>
-    <%-- <div class="feat-grid-container">
-        <div class="feat-card">
-            <div class="feat-grid-contents"><img src= "images/beautiful-girl-with-long-hair-garage-repairing-motorcycle.jpg " style="width:100%" class="feat-grid-img feat-img"><div>Kaleo's Garage</div></div>
+<main>
+        <h1 style="color:white;">Let's talk</h1>
+        <p style="color:white;">Ask us anything or just say hi...</p>
+        <div>
+            <i class="fas fa-phone"></i>
+            <p style="color:white;">Your Phone Number</p>
+            <i class="fas fa-envelope"></i>
+            <p style="color:white;">Your Email Address</p>
         </div>
-        <div class="feat-card">
-            <div class="feat-grid-contents"><img src= "images/creative-artisan-job-workshop.jpg" style="width:100%" class="feat-grid-img feat-img"><div>Alice's Workshop</div></div>
-        </div>
-        <div class="feat-card">
-            <div class="feat-grid-contents"><img src= "images/modern-interior-design-office.jpg" style="width:100%" class="feat-grid-img feat-img"><div>Sheldon's Office Space</div>
-            </div>
-        </div>
-    </div>
-        <a class="prev" onclick="plusSlides(-1)"></a>
-        <a class="next" onclick="plusSlides(1)"></a>
-    </div>
-    <br>
-    <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span> 
-        <span class="dot" onclick="currentSlide(2)"></span> 
-        <span class="dot" onclick="currentSlide(3)"></span> 
-    </div> --%>
-
-    <div class="card-container">
-    <%@ page import="makerhub.Spaces" %>
-    <%@ page import="makerhub.ManageSpaces" %>
-    <%@ page import="makerhub.ManagePicture" %>
-    <%@ page import="java.util.ArrayList" %>
-    <%
-        Spaces spacesObj = new Spaces();
-        ArrayList<ManageSpaces> spaces = spacesObj.getAllSpaces();
-        int count = 0; // Add a counter
-
-        for (ManageSpaces space : spaces) {
-            if (count >= 3) break; // Stop the loop after 3 spaces
-
-            String type = space.getType();
-            String title = space.getSpaceName();
-            String description = space.getDescription();
-            double price = space.getPrice();
-            ManagePicture picture = spacesObj.getPictureForSpace(space.getSpaceID());
-            String image = picture != null ? "images/" + picture.getPicUrl() : "images/your-default-image.jpg";
-    %>
-    <div class="product-card">
-        <div class="product-tumb">
-            <img src="<%=image%>" alt="">
-        </div>
-        <div class="product-details">
-            <span class="product-catagory"><%=type%></span>
-            <h4><a href=""><%=title%></a></h4>
-            <p><%=description%></p>
-            <div class="product-bottom-details">
-                <div class="product-price">$<%=price%> /hr</div>
-                <div class="product-links">
-                    <a href=""><i class="fa fa-heart"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <%
-        count++; // Increment the counter
-        }
-    %>
-</div>
-
+        <form>
+            <input type="text" id="name" name="name" placeholder="Name">
+            <input type="email" id="email" name="email" placeholder="Email">
+            <textarea id="message" name="message" placeholder="Message"></textarea>
+            <input type="submit" value="Send">
+        </form>
+    </main>
 
 <footer>
     <div class="container">

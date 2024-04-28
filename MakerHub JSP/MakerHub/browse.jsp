@@ -11,7 +11,7 @@
     <title>MakerHub</title>
     <link rel="stylesheet" href="browse.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" type="image/x-icon" href="images/MakerHub_Logo_Small200.svg">
+        <link rel="icon" type="image/x-icon" href="images/MakerHub_Logo_Small200.svg">
     <script src=""></script>
 </head>
 <body>
@@ -43,19 +43,19 @@
             </svg>
         </div>
         <div class="brand">
-            <h1><a href="#">MakerHub</a></h1>
+            <h1><a href="homepage.jsp">MakerHub</a></h1>
         </div>
         <nav class="menu">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Bookings</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="homepage.jsp">Home</a></li>
+                <li><a href="browse.jsp">Browse</a></li>
+                <li><a href="aboutus.jsp">About Us</a></li>
+                <li><a href="MakerHubContactUs.jsp">Contact</a></li>
             </ul>
         </nav>
         <div class="user-links">
-            <a href="#">Login</a>
-            <a href="#">Sign Up</a>
+            <a href="./MakerHubLogin.jsp">Login</a>
+            <a href="./MakerHubRegister.jsp">Sign Up</a>
         </div>
     </div>
 </header>

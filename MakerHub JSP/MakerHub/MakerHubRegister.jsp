@@ -39,19 +39,19 @@
             </svg>
         </div>
         <div class="brand">
-            <h1><a href="#">MakerHub</a></h1>
+            <h1><a href="homepage.jsp">MakerHub</a></h1>
         </div>
         <nav class="menu">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Bookings</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="homepage.jsp">Home</a></li>
+                <li><a href="browse.jsp">Browse</a></li>
+                <li><a href="aboutus.jsp">About Us</a></li>
+                <li><a href="MakerHubContactUs.jsp">Contact</a></li>
             </ul>
         </nav>
         <div class="user-links">
-            <a href="#">Login</a>
-            <a href="#">Sign Up</a>
+            <a href="./MakerHubLogin.jsp">Login</a>
+            <a href="./MakerHubRegister.jsp">Sign Up</a>
         </div>
     </div>
 </header>
