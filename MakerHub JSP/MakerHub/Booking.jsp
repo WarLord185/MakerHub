@@ -32,7 +32,14 @@
             </div>
             <%
             String un= (String)session.getAttribute("username");
-            
+            if(un==null){
+                try{
+            response.sendRedirect("http://localhost:8080/Makerhub/MakerHubLogin.jsp");
+                }
+                catch(Exception e){
+                    out.println("Redirecting error:" + e.getMessage());
+                }
+            }
             %>
             <div class="col-div-6">
                 <div class="profile">
