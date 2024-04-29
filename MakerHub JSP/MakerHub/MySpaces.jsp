@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,13 +15,13 @@
         <p class="logo"><span>Maker</span>Hub </p>
         <a href="OwnerDashboard.jsp" class="icon-a"><i class="fa fa-dashboard icons"></i>&nbsp;&nbsp;
         Dashboard</a>
-        <a href="#" class="icon-a"><i class="fa fa-archive icons"></i>&nbsp;&nbsp;
+        <a href="MySpaces.jsp" class="icon-a"><i class="fa fa-archive icons"></i>&nbsp;&nbsp;
         My Spaces</a>
         <a href="insertspace.jsp" class="icon-a"><i class="fa fa-plus-circle icons"></i>&nbsp;&nbsp;
         Insert Spaces</a>
         <a href="Booking.jsp" class="icon-a"><i class="fa fa-calendar icons"></i>&nbsp;&nbsp;
         Bookings</a>
-        <a href="homepage.jsp" class="icon-a"><i class="fa fa-user icons"></i>&nbsp;&nbsp;
+        <a href="MakerHubLogout.jsp" class="icon-a"><i class="fa fa-user icons"></i>&nbsp;&nbsp;
         Logout</a>
     </div>
 
@@ -31,18 +33,35 @@
                 <span style="font-size: 30px; cursor: pointer;color: white;" class="nav2">
                 &#9776; My Spaces</span>
             </div>
+<%
+String un= (String)session.getAttribute("username");
+
+%>
+
 
             <div class="col-div-6">
                 <div class="profile">
                 <img src="images/test_pfp_2_50x50.png" class="pro-img">
-                <p>Ryan Rajkumar <span>MECHANIC</span></p>
+                <p><%= un%> <span>Space owner</span></p>
             </div>
             </div>
             <div class="clearfix"></div>
         </div>
         
     </div>
+    <%@ page import="makerhub.*"%>
+  
+    <%@ page import="java.util.ArrayList"%>
 
+    <% 
+    Spaces m = new Spaces();
+    ArrayList<ManageSpaces> s = m.getOwnerSpaces();
+
+    for (int i = 0; i < s.size(); i++) {
+        ManageSpaces sp = s.get(i);
+         String type= m.getType(sp.type);
+        
+%>
     
 
     <div class="card-container">
@@ -52,12 +71,12 @@
                 <img src="images/creative-artisan-job-workshop.jpg" alt="">
             </div>
             <div class="product-details">
-                <span class="product-catagory">Carpentry, WoodWorking</span>
-                <h4><a href="">Sunil WoodWorking</a></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, possimus nostrum!</p>
+                <span class="product-catagory"><%= type%></span>
+                <h4><a href=""><%= sp.space_Name %></a></h4>
+                <p><%= sp.description %></p>
                 <div class="product-bottom-details">
                     <!-- <div class="product-price"><small>$96.00</small>$230.99</div> -->
-                    <div class="product-price">$230.99 /hr</div>
+                    <div class="product-price"> $<%= sp.price%> /hr</div>
                     <div class="product-links">
                         <a href=""><i class="fa fa-heart"></i></a>
                         <!-- <a href=""><i class="fa fa-shopping-cart"></i></a> -->
@@ -67,6 +86,10 @@
         </div>
         
         </div>
+
+        <%
+    }
+        %>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 </html>
