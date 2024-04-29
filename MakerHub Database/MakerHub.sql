@@ -152,6 +152,27 @@ insert into Space (Space_ID, Space_Name, Address, Description, Type, Price, Avai
 insert into Space (Space_ID, Space_Name, Address, Description, Type, Price, Availability, Owner_ID) values (19, 'Heaney-King', '8 Ohio Road', 'Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.', 'Science', 305.36, 'ye', 19);
 insert into Space (Space_ID, Space_Name, Address, Description, Type, Price, Availability, Owner_ID) values (20, 'Hintz-Tremblay', '853 Holy Cross Place', 'In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.', 'Culinary Arts', 459.67, 'ye', 20);
 
+insert into Renter (Renter_ID, Name, Address, Phone_Number, Email, DoB, Account_Type) values (1, 'Zebadiah', '298 Bluejay Alley', '986-822-4077', 'ztreweke0@angelfire.com', '1990-01-01', 'Renter');
+insert into Renter (Renter_ID, Name, Address, Phone_Number, Email, DoB, Account_Type) values (2, 'Gannon', '2793 Mayfield Alley', '318-610-5265', 'glygo1@smugmug.com', '1957-06-25', 'Renter');
+insert into Renter (Renter_ID, Name, Address, Phone_Number, Email, DoB, Account_Type) values (3, 'Mel', '9737 Lerdahl Junction', '999-785-4309', 'mbreslauer2@marriott.com', '2001-04-15', 'Renter');
+insert into Renter (Renter_ID, Name, Address, Phone_Number, Email, DoB, Account_Type) values (4, 'Rockwell', '87 Stang Crossing', '878-140-9703', 'rsworder3@tuttocitta.it', '1986-04-25', 'Renter');
+insert into Renter (Renter_ID, Name, Address, Phone_Number, Email, DoB, Account_Type) values (5, 'Eimile', '75278 Goodland Avenue', '827-186-9879', 'eboshere4@biglobe.ne.jp', '1969-04-07', 'Renter');
+insert into Renter (Renter_ID, Name, Address, Phone_Number, Email, DoB, Account_Type) values (6, 'Erminie', '03574 Glacier Hill Lane', '326-759-2747', 'ehowling5@myspace.com', '1989-01-19', 'Renter');
+insert into Renter (Renter_ID, Name, Address, Phone_Number, Email, DoB, Account_Type) values (7, 'Mommy', '7788 Southridge Hill', '832-859-1908', 'meskriet6@networksolutions.com', '1991-08-03', 'Renter');
+insert into Renter (Renter_ID, Name, Address, Phone_Number, Email, DoB, Account_Type) values (8, 'Verne', '92501 Kinsman Way', '266-400-3176', 'vbullene7@skyrock.com', '2004-01-10', 'Renter');
+insert into Renter (Renter_ID, Name, Address, Phone_Number, Email, DoB, Account_Type) values (9, 'Warren', '084 Algoma Court', '216-297-0785', 'wskentelbery8@berkeley.edu', '1979-12-15', 'Renter');
+insert into Renter (Renter_ID, Name, Address, Phone_Number, Email, DoB, Account_Type) values (10, 'Glad', '3 Summit Terrace', '306-124-6049', 'gdigges9@addtoany.com', '2000-10-28', 'Renter');
+insert into Renter (Renter_ID, Name, Address, Phone_Number, Email, DoB, Account_Type) values (11, 'Fayth', '51 Ohio Point', '150-154-4797', 'fgriswaitea@360.cn', '1976-06-07', 'Renter');
+insert into Renter (Renter_ID, Name, Address, Phone_Number, Email, DoB, Account_Type) values (12, 'Agna', '203 Hayes Center', '503-303-1131', 'afeldbaumb@epa.gov', '1960-11-10', 'Renter');
+insert into Renter (Renter_ID, Name, Address, Phone_Number, Email, DoB, Account_Type) values (13, 'Leandra', '76756 Nelson Way', '664-953-4563', 'lmavingc@fastcompany.com', '1968-02-13', 'Renter');
+insert into Renter (Renter_ID, Name, Address, Phone_Number, Email, DoB, Account_Type) values (14, 'Magdalena', '5880 Fair Oaks Pass', '745-928-3555', 'mwintersgilld@webeden.co.uk', '1992-06-16', 'Renter');
+insert into Renter (Renter_ID, Name, Address, Phone_Number, Email, DoB, Account_Type) values (15, 'Kali', '59 Logan Center', '648-671-1378', 'kmckinstrye@globo.com', '1971-10-15', 'Renter');
+insert into Renter (Renter_ID, Name, Address, Phone_Number, Email, DoB, Account_Type) values (16, 'Sheffie', '16 Golf View Point', '103-249-6336', 'shemphillf@china.com.cn', '1963-10-22', 'Renter');
+insert into Renter (Renter_ID, Name, Address, Phone_Number, Email, DoB, Account_Type) values (17, 'Emiline', '8746 Weeping Birch Lane', '178-678-2216', 'earkilg@sitemeter.com', '1953-10-01', 'Renter');
+insert into Renter (Renter_ID, Name, Address, Phone_Number, Email, DoB, Account_Type) values (18, 'Hillyer', '986 Wayridge Point', '975-317-6707', 'htroddh@businessweek.com', '1965-03-30', 'Renter');
+insert into Renter (Renter_ID, Name, Address, Phone_Number, Email, DoB, Account_Type) values (19, 'Orazio', '7 Sauthoff Place', '549-458-2117', 'oleybandi@altervista.org', '1956-05-15', 'Renter');
+insert into Renter (Renter_ID, Name, Address, Phone_Number, Email, DoB, Account_Type) values (20, 'Veronika', '062 Anzinger Junction', '795-831-2012', 'vasplenj@4shared.com', '1994-06-24', 'Renter');
+
 INSERT INTO Category VALUES('C1','Culinary Arts','to cook');
 INSERT INTO Category VALUES('C2','Arts and Crafts','to create art');
 INSERT INTO Category VALUES('C3','Textiles and Fashion','to create clothing');
@@ -162,4 +183,30 @@ INSERT INTO Category VALUES('C7','Digital Media','to work with software');
 INSERT INTO Category VALUES('C8','woodworking','to create with woods');
 INSERT INTO Category VALUES('C9','Gaming Music','to create music');
 
--- DELETE FROM Picture WHERE Space_ID IN (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20);
+INSERT INTO Picture (Pic_ID, Pic_URL, UploadDate, Caption, Space_ID) VALUES
+(1, '1.jpg', '2024-04-28', 'Caption for image 1', 1),
+(2, '2.jpg', '2024-04-28', 'Caption for image 2', 2),
+(3, '3.jpg', '2024-04-28', 'Caption for image 3', 3),
+(4, '4.jpg', '2024-04-28', 'Caption for image 4', 4),
+(5, '5.jpg', '2024-04-28', 'Caption for image 5', 5),
+(6, '6.jpg', '2024-04-28', 'Caption for image 6', 6),
+(7, '7.jpg', '2024-04-28', 'Caption for image 7', 7),
+(8, '8.jpg', '2024-04-28', 'Caption for image 8', 8),
+(9, '9.jpg', '2024-04-28', 'Caption for image 9', 9),
+(10, '10.jpg', '2024-04-28', 'Caption for image 10', 10),
+(11, '11.jpg', '2024-04-28', 'Caption for image 11', 11),
+(12, '12.jpg', '2024-04-28', 'Caption for image 12', 12),
+(13, '13.jpg', '2024-04-28', 'Caption for image 13', 13),
+(14, '14.jpg', '2024-04-28', 'Caption for image 14', 14),
+(15, '15.jpg', '2024-04-28', 'Caption for image 15', 15),
+(16, '16.jpg', '2024-04-28', 'Caption for image 16', 16),
+(17, '17.jpg', '2024-04-28', 'Caption for image 17', 17),
+(18, '18.jpg', '2024-04-28', 'Caption for image 18', 18),
+(19, '19.jpg', '2024-04-28', 'Caption for image 19', 19),
+(20, '20.jpg', '2024-04-28', 'Caption for image 20', 20);
+
+INSERT INTO Login (User_ID, Username, Password, Account_Type) VALUES
+(1, 'Anselm', 'AnselmPass', 'Owner'),
+(2, 'Renell', 'RenellPass', 'Owner'),
+(3, 'Valentijn', 'ValentijnPass', 'Owner'),
+(4, 'Deidre', 'DeidrePass', 'Owner');
