@@ -17,7 +17,7 @@
         Insert Spaces</a>
         <a href="Booking.jsp" class="icon-a"><i class="fa fa-calendar icons"></i>&nbsp;&nbsp;
         Bookings</a>
-        <a href="homepage.jsp" class="icon-a"><i class="fa fa-user icons"></i>&nbsp;&nbsp;
+        <a href="MakerHubLogout.jsp" class="icon-a"><i class="fa fa-user icons"></i>&nbsp;&nbsp;
         Logout</a>
     </div>
 
@@ -29,11 +29,14 @@
                 <span style="font-size: 30px; cursor: pointer;color: white;" class="nav2">
                 &#9776; Dashboard</span>
             </div>
+<%
+String un= (String)session.getAttribute("username");
 
+%>
             <div class="col-div-6">
                 <div class="profile">
                 <img src="images/test_pfp_2_50x50.png" class="pro-img">
-                <p>Ryan Rajkumar <span>MECHANIC</span></p>
+                <p><%= un%> <span>Space owner</span></p>
             </div>
             </div>
             <div class="clearfix"></div>
