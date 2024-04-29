@@ -100,7 +100,7 @@
         int count = 0; // Add a counter
 
         for (ManageSpaces space : spaces) {
-            if (count >= 3) break; // Stop the loop after 3 spaces
+            if (count >= 4) break; // Stop the loop after 3 spaces
 
             String type = space.getType();
             String title = space.getSpaceName();
