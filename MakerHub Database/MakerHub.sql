@@ -210,3 +210,9 @@ INSERT INTO Login (User_ID, Username, Password, Account_Type) VALUES
 (2, 'Renell', 'RenellPass', 'Owner'),
 (3, 'Valentijn', 'ValentijnPass', 'Owner'),
 (4, 'Deidre', 'DeidrePass', 'Owner');
+
+INSERT INTO Login (User_ID, Username, Password, Account_Type) VALUES
+(1, 'Zebadiah', 'ZebadiahPass', 'Renter'),
+(2, 'Gannon', 'GannonPass', 'Renter'),
+(3, 'Mel', 'MelPass', 'Renter'),
+(4, 'Rockwell', 'RockwellPass', 'Renter');
