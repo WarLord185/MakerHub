@@ -45,7 +45,7 @@ public class Spaces extends DBConnect {
             PreparedStatement ps = conn.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
 
-            if (rs.next()) {
+            while (rs.next()) {
                 ManageSpaces space = new ManageSpaces();
                 space.setSpaceID(rs.getInt("Space_ID"));
                 space.setSpaceName(rs.getString("Space_Name"));  
@@ -53,11 +53,10 @@ public class Spaces extends DBConnect {
                 space.setDescription(rs.getString("Description"));
                 space.setType(rs.getString("Type"));
                 space.setPrice(rs.getDouble("Price"));
-                // String availability = rs.getString("Availability");
-                // space.setAvailability("yes".equalsIgnoreCase(availability)); // Convert string to boolean
                 space.setAvailability(rs.getString("Availability"));
                 spaces.add(space);
             }
+            
         } catch (SQLException e) {
             e.printStackTrace();
         }
