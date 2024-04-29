@@ -108,3 +108,25 @@ insert into Space (Space_ID, Space_Name, Address, Description, Type, Price, Avai
 insert into Space (Space_ID, Space_Name, Address, Description, Type, Price, Availability, Owner_ID) values (98, 'Collins-Heaney', '83204 Kipling Center', 'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.', 'Art', 879.77, 'ye', 98);
 insert into Space (Space_ID, Space_Name, Address, Description, Type, Price, Availability, Owner_ID) values (99, 'Homenick-Koch', '23 Summit Center', 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.', 'Culinary Arts', 27.18, 'ye', 99);
 insert into Space (Space_ID, Space_Name, Address, Description, Type, Price, Availability, Owner_ID) values (100, 'Prosacco, McCullough and Pagac', '899 Susan Plaza', 'Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.', 'Technology', 737.19, 'ye', 100);
+
+INSERT INTO your_table_name (Pic_ID, Pic_URL, UploadDate, Caption, Space_ID) VALUES
+(1, '1.jpg', '2024-04-28', 'Caption for image 1', 1),
+(2, '2.jpg', '2024-04-28', 'Caption for image 2', 2),
+(3, '3.jpg', '2024-04-28', 'Caption for image 3', 3),
+(4, '4.jpg', '2024-04-28', 'Caption for image 4', 4),
+(5, '5.jpg', '2024-04-28', 'Caption for image 5', 5),
+(6, '6.jpg', '2024-04-28', 'Caption for image 6', 6),
+(7, '7.jpg', '2024-04-28', 'Caption for image 7', 7),
+(8, '8.jpg', '2024-04-28', 'Caption for image 8', 8),
+(9, '9.jpg', '2024-04-28', 'Caption for image 9', 9),
+(10, '10.jpg', '2024-04-28', 'Caption for image 10', 10),
+(11, '11.jpg', '2024-04-28', 'Caption for image 11', 11),
+(12, '12.jpg', '2024-04-28', 'Caption for image 12', 12),
+(13, '13.jpg', '2024-04-28', 'Caption for image 13', 13),
+(14, '14.jpg', '2024-04-28', 'Caption for image 14', 14),
+(15, '15.jpg', '2024-04-28', 'Caption for image 15', 15),
+(16, '16.jpg', '2024-04-28', 'Caption for image 16', 16),
+(17, '17.jpg', '2024-04-28', 'Caption for image 17', 17),
+(18, '18.jpg', '2024-04-28', 'Caption for image 18', 18),
+(19, '19.jpg', '2024-04-28', 'Caption for image 19', 19),
+(20, '20.jpg', '2024-04-28', 'Caption for image 20', 20);
