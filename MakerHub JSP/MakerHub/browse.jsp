@@ -54,10 +54,25 @@
             </ul>
         </nav>
         <div class="user-links">
-             <a href="./MakerHubLogout.jsp">Logout</a>
+            <a href="./MakerHubLogout.jsp">Logout</a>
         </div>
     </div>
 </header>
+<form action="search.jsp" method="post">
+    <table border="0" width="75%" align="center" cellpadding="12">
+
+      <tr>
+        <td width="20%"> <label> Enter Space name: </label> </td>
+        <td width=""> <input type="text" name="name" required/> </td>
+      </tr>
+
+      <tr>
+        <td width="20%"> </td>
+        <td width=""> <input class="button button1" type="reset" value="Clear" /> <input class="button button2" type="submit" value="search" /> </td>
+      </tr>
+
+    </table>
+  </form>
 
     <div class="card-container">
         <%
