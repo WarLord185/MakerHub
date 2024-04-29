@@ -19,6 +19,8 @@
 
    if (userType.equals("Owner")) {    
     response.sendRedirect("OwnerDashboard.jsp");
+    session.setAttribute("username", username);
+    
    
 } else if (userType.equals("Renter")) {
     response.sendRedirect("homepage.jsp");
