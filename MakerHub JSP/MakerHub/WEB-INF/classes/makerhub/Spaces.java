@@ -53,9 +53,9 @@ public class Spaces extends DBConnect {
                 space.setDescription(rs.getString("Description"));
                 space.setType(rs.getString("Type"));
                 space.setPrice(rs.getDouble("Price"));
-                String availability = rs.getString("Availability");
-                space.setAvailability("yes".equalsIgnoreCase(availability)); // Convert string to boolean
-                space.setOwnerID(rs.getInt("Owner_ID"));
+                // String availability = rs.getString("Availability");
+                // space.setAvailability("yes".equalsIgnoreCase(availability)); // Convert string to boolean
+                space.setAvailability(rs.getString("Availability"));
                 spaces.add(space);
             }
         } catch (SQLException e) {
@@ -84,6 +84,7 @@ public class Spaces extends DBConnect {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return picture;
     }
 
@@ -175,22 +176,20 @@ public class Spaces extends DBConnect {
 	}
         public ArrayList<Owner> getOwner(){
         ArrayList<Owner> owneri= new ArrayList<Owner>();
-
             try{
             String query1 ="Select * Space_Owner";
             PreparedStatement stmt= conn.prepareStatement(query1);
             ResultSet rs=stmt.executeQuery();
-
             while(rs.next()){
-                Owner o = new Owner();
-                o.id=rs.getString("Owner_ID");
-                o.name= rs.getString("Name");
-                o.add=rs.getString("Address");
-                o.no=rs.getString("Phone_Number");
-                o.mail=rs.getString("Email");
-                o.dob=rs.getString("DoB");
-                o.type=rs.getString("Account_Type");
-                owneri.add(o);  
+            Owner o = new Owner();
+            o.id=rs.getString("Owner_ID");
+            o.name= rs.getString("Name");
+            o.add=rs.getString("Address");
+            o.no=rs.getString("Phone_Number");
+            o.mail=rs.getString("Email");
+            o.dob=rs.getString("DoB");
+            o.type=rs.getString("Account_Type");
+            owneri.add(o);  
             }
             }
             catch (SQLException e) {
@@ -216,7 +215,7 @@ public class Spaces extends DBConnect {
                 em.description=rs.getString("Description");
                 em.type=rs.getString("Type");
                 em.price=rs.getDouble("Price");
-                em.availability=rs.getBoolean("Availability");
+                em.availability=rs.getString("Availability");
                 em.ownerID=rs.getInt("Owner_ID");
             }
         } catch (SQLException e) {

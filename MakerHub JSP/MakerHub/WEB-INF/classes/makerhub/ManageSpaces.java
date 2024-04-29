@@ -7,7 +7,7 @@ public class ManageSpaces {
     public String description;
     public String type;
     public double price;
-    public boolean availability;
+    public String availability;
     public int ownerID;
 
     // Getter and Setter for Space_ID
@@ -65,11 +65,11 @@ public class ManageSpaces {
     }
 
     // Getter and Setter for Availability
-    public boolean isAvailability() {
+    public String isAvailability() {
         return availability;
     }
 
-    public void setAvailability(boolean availability) {
+    public void setAvailability(String availability) {
         this.availability = availability;
     }
 
