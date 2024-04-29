@@ -196,8 +196,7 @@ a {
             </ul>
         </nav>
         <div class="user-links">
-            <a href="login.jsp">Login</a>
-            <a href="register.jsp">Sign Up</a>
+             <a href="./MakerHubLogout.jsp">Logout</a>
         </div>
     </div>
 </header>
