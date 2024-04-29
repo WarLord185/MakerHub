@@ -25,6 +25,28 @@
       <a href="homepage.jsp" class="icon-a"><i class="fa fa-user icons"></i>&nbsp;&nbsp;
       Logout</a>
   </div>
+  <div id="main">
+    <div class="head">
+        <div class="col-div-6">
+            <span style="font-size: 30px; cursor: pointer;color: white;" class="nav">
+            &#9776; My Spaces</span>
+            <span style="font-size: 30px; cursor: pointer;color: white;" class="nav2">
+            &#9776; My Spaces</span>
+        </div>
+<%
+String un= (String)session.getAttribute("username");
+
+%>
+        <div class="col-div-6">
+            <div class="profile">
+            <img src="images/test_pfp_2_50x50.png" class="pro-img">
+            <p><%= un%> <span>Space owner</span></p>
+        </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    
+</div>
     <h1 id="heading1"> Add a New Space</h1>
     
 
