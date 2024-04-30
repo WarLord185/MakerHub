@@ -100,7 +100,7 @@ else{
         </div>
         <div class="product-details">
             <span class="product-catagory"><%=s.type%></span>
-            <h4><a href=""><%=s.space_Name%></a></h4>
+            <h4><a href="insertBooking.jsp"><%=s.space_Name%></a></h4>
             <p><%=s.description%></p>
             <div class="product-bottom-details">
                 <div class="product-price">$<%=s.price%> /hr</div>

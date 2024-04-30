@@ -25,11 +25,21 @@
                 <span style="font-size: 30px; cursor: pointer;color: white;" class="nav2">
                 &#9776; Insert Space Notification</span>
             </div>
-
+            <%
+            String un= (String)session.getAttribute("username");
+            if(un==null){
+                try{
+            response.sendRedirect("http://localhost:8080/Makerhub/MakerHubLogin.jsp");
+                }
+                catch(Exception e){
+                    out.println("Redirecting error:" + e.getMessage());
+                }
+            }
+            %>
             <div class="col-div-6">
                 <div class="profile">
                 <img src="images/test_pfp_2_50x50.png" class="pro-img">
-                <p>Ryan Rajkumar <span>MECHANIC</span></p>
+                <p><%= un %> <span>Space owner</span></p>
             </div>
             </div>
             <div class="clearfix"></div>
@@ -75,13 +85,15 @@
           else{
         %>
 
-        <h2 class="col-div-3"> Insert SUCCESSFUL!! </h2>
-        <div id="section2">
-             The following has been added: <%= name %>
+       
+        <div class="col-div-4"><br><br>
+           <h2> Insert SUCCESSFUL!! </h2>   
+          The following has been added: <%= name %>
+            
              <br>
-             your Space id is: <%= t %>
+             
              <br>
-             ownerid: <%=i%>
+            
         </div>
       <%
           }

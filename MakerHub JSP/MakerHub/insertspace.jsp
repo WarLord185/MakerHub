@@ -94,10 +94,7 @@ response.sendRedirect("http://localhost:8080/Makerhub/MakerHubLogin.jsp");
 
           </td>
       </tr>
-      <tr>
-        <td class="col1"> username:</td>
-        <td><input type="text" name="uname" required></td>
-        </tr>
+     
       <br>
 
       <tr>

@@ -1,11 +1,11 @@
 package makerhub;
 
 public class ManageSpaceOwner {
-    public int ownerID;
-    public String name;
-    public String address;
-    public String phoneNumber;
-    public String dob;
+    private int ownerID;
+    private String name;
+    private String address;
+    private String phoneNumber;
+    private String dob;
 
     // Getter and Setter for Owner_ID
     public int getOwnerID() {
@@ -52,4 +52,3 @@ public class ManageSpaceOwner {
         this.dob = dob;
     }
 }
-

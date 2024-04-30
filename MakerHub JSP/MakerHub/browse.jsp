@@ -80,6 +80,7 @@
             ArrayList<ManageSpaces> spaces = spacesObj.getAllSpaces();
 
             for (ManageSpaces space : spaces) {
+                int id= space.getSpaceID();
                 String type = space.getType();
                 String title = space.getSpaceName();
                 String description = space.getDescription();
@@ -94,11 +95,12 @@
             </div>
             <div class="product-details">
                 <span class="product-catagory"><%=type%></span>
-                <h4><a href=""><%=title%></a></h4>
+                <h4><a href="insertBooking.jsp"><%=title%> </a></h4>
                 <p><%=description%></p>
                 <div class="product-bottom-details">
                     <div class="product-price">$<%=price%> /hr</div>
-                    <div class="product-links">
+                    <div class="product-price"> ID:<%=id%> </div>
+                    <div class="product-links" 
                         <a href=""><i class="fa fa-heart"></i></a>
                     </div>
                 </div>

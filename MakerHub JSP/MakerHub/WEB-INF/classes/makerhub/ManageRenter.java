@@ -50,4 +50,3 @@ public class ManageRenter{
         this.phone_Number = phone_Number;
     }
 }
-

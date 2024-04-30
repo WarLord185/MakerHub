@@ -3,12 +3,12 @@ import java.util.*;
 
 public class MakerHub {
     public static void main(String[] args) {
-        // insert i= new insert();     
-        // i.insertrenter("Sulin", "#6 Simpson Street Adeola Village","2021-12-01" , "796-0030");
-                Spaces spaces = new Spaces();
+         Spaces i= new Spaces();     
+        /* i.insertSpace("Sulin", "#6 Simpson Street Adeola Village","asdffg" , "Arts and Crafts", "200.00","1");
+                Spaces spaces = new Spaces();*/
         
                 // Test getAllSpaceOwners method
-                ArrayList<ManageSpaceOwner> spaceOwners = spaces.getAllSpaceOwners();
+               /* ArrayList<ManageSpaceOwner> spaceOwners = spaces.getAllSpaceOwners();
                 for (ManageSpaceOwner owner : spaceOwners) {
                     System.out.println("Owner ID: " + owner.getOwnerID());
                     System.out.println("Name: " + owner.getName());
@@ -30,6 +30,11 @@ public class MakerHub {
                     System.out.println("Availability: " + space.isAvailability());
                     System.out.println("Owner ID: " + space.getOwnerID());
                     System.out.println();
-                }
+                }*/
+               insert c= new insert();
+               c.insertUser("jeffery", "st charles place","796-0076","jefferydahmer@gmail.com","12/12/12","asdfghj","asdfghj","Owner");
             }
+    
+    
+    
         }

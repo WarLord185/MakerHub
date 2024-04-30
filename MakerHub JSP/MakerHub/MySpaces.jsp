@@ -78,12 +78,12 @@ response.sendRedirect("http://localhost:8080/Makerhub/MakerHubLogin.jsp");
                 <img src="images/creative-artisan-job-workshop.jpg" alt="">
             </div>
             <div class="product-details">
-                <span class="product-catagory"><%= type%></span>
-                <h4><a href=""><%= sp.space_Name %></a></h4>
+                <span class="product-catagory"><%= sp.type%></span>
+                <h4><a href="insertBooking.jsp"><%= sp.space_Name %></a></h4>
                 <p><%= sp.description %></p>
                 <div class="product-bottom-details">
                     <!-- <div class="product-price"><small>$96.00</small>$230.99</div> -->
-                    <div class="product-price"> $<%= sp.price%> /hr</div>
+                    <div class="product-price"> $<%= sp.price %> /hr</div>
                     <div class="product-links">
                         <a href=""><i class="fa fa-heart"></i></a>
                         <!-- <a href=""><i class="fa fa-shopping-cart"></i></a> -->

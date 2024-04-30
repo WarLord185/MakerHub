@@ -50,7 +50,8 @@
             </ul>
         </nav>
         <div class="user-links">
-             <a href="./MakerHubLogout.jsp">Logout</a>
+            <a href="./MakerHubLogin.jsp">Login</a>
+            <a href="./MakerHubRegister.jsp">Sign Up</a>
         </div>
     </div>
 </header>

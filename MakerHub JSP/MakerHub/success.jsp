@@ -24,6 +24,7 @@
     insert user= new insert();
     int r =  user.insertUser(name, add, date, email, tele, username, password, accountType);             
 
+
     if(r <= 0){
       out.println("<script type=\"text/javascript\">");
       out.println("unsuccessfulPopup();");

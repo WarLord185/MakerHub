@@ -3,14 +3,14 @@ import java.sql.Time;
 import java.sql.Date;
 
 public class ManageBooking{
-    public int booking_ID;
-     public int renter_ID;
-     public int space_ID;
-     public String status;
-     public Date bookingDate;
-     public Time startTime;
-     public Time endTime;
-public ManageBooking(){}
+    private int booking_ID;
+    private int renter_ID;
+    private int space_ID;
+    private String status;
+    private Date bookingDate;
+    private Time startTime;
+    private Time endTime;
+
     // Getters
     public int getBooking_ID() {
         return booking_ID;
@@ -68,5 +68,4 @@ public ManageBooking(){}
     public void setEndTime(Time endTime) {
         this.endTime = endTime;
     }
-    
 }

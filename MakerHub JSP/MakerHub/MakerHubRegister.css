@@ -6,6 +6,12 @@ header {
     padding: 20px;
     margin: 0px;
 }
+.user-links a {
+    float: right;
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+}
 
 body {
     margin: 0px;
