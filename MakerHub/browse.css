@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* @media screen and (max-width: 1200px) {
+    .product-card {
+        flex: 1 0 31%;
+        max-width: 33%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .product-card {
+        flex: 1 0 46%;
+        max-width: 48%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .product-card {
+        flex: 1 0 96%;
+        max-width: 98%;
+    }
+} */
+
+*
+{
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    margin: 0px;
+}
+
+body {
+    margin: 0px;
+    background-color: #2e3a42;
+    font-family: "Poppins", sans-serif;
+    color: #e6e6ea;
+    background-color: #34424b;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo{
+    display: flex;
+    width: 3.3285rem;
+    height: 3.3285rem;
+    align-items: center;
+}
+
+.brand h1 {
+    margin: 0;
+    padding-left: 1rem;
+}
+
+.menu {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; 
+}
+
+.menu ul li {
+    margin-right: 20px;
+}
+
+.user-links {
+    display: flex; 
+}
+
+.user-links a {
+    margin-left: 20px;
+}
+
+footer {
+    background-color: hsla(0, 8.7%, 91%, 0.05);
+    padding: 20px;
+    color: #e6e6ea;
+}
+.container {
+    max-width: 960px;
+    margin: auto;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.col-md-3, .col-md-6 {
+    flex: 1;
+    margin: 10px;
+}
+h5 {
+    margin-top: 0;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+a {
+    color: #e6e6ea;
+    text-decoration: none;
+}
+
+.search-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* ----------------------------- */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.product-card {
+        display: flex;
+        flex-direction: column;
+    width: 380px;
+    position: relative;
+    /* box-shadow: 0 2px 7px #dfdfdf; */
+    margin: 30px auto;
+    background: #fafafa;
+    border-radius: 15px;
+    /* flex: 1 0 21%; */
+    /* box-sizing: border-box; */
+    margin: 1%;
+    max-width: 23%;
+}
+
+.badge {
+    position: absolute;
+    left: 0;
+    top: 20px;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 700;
+    background: red;
+    color: #fff;
+    padding: 3px 10px;
+}
+
+.product-tumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* height: 300px; */
+    /* padding: 50px; */
+    background: #f0f0f0;
+    border-radius: 15px;
+}
+
+.product-tumb img {
+    /* max-width: 100%;
+    max-height: 100%; */
+    /* max-width: 380px; */
+    /* max-height: 300px; */
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+    max-width: 100%;
+    height: auto;
+}
+
+.product-details {
+    padding: 30px;
+}
+
+.product-catagory {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ccc;
+    margin-bottom: 18px;
+}
+
+.product-details h4 a {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    color: #363636;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.product-details h4 a:hover {
+    color: #CF6679;
+}
+
+.product-details p {
+    font-size: 15px;
+    line-height: 22px;
+    margin-bottom: 18px;
+    color: #999;
+}
+
+.product-bottom-details {
+        margin-top: auto;
+    overflow: hidden;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.product-bottom-details div {
+    float: left;
+    width: 50%;
+}
+
+.product-price {
+    font-size: 18px;
+    color: #CF6679;
+    font-weight: 600;
+}
+
+.product-price small {
+    font-size: 80%;
+    font-weight: 400;
+    text-decoration: line-through;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.product-links {
+    text-align: right;
+}
+
+.product-links a {
+    display: inline-block;
+    margin-left: 5px;
+    color: #e1e1e1;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.product-links a:hover {
+    color: #CF6679;
+}
