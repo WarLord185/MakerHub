@@ -3,6 +3,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 public class insert extends DBConnect { 
+    
+    public insert(){
+        
+    }
     public int insertUser(String name, String add, String date, String tel, String email, String username, String password, String accountType){
     	int rows = 0;
 
@@ -47,7 +51,7 @@ public class insert extends DBConnect {
     public int insertBooking(String rent_id, String space_id, String status, String date, String start, String end ){
        int rows = 0;
             try{
-            String insertStmt = "INSERT INTO Booking (Renter_ID, Space_ID, Status, BookingDate, StartTime, EndTime) VALUES (?, ?, ?, ?, ?, ?)";
+            String insertStmt = "INSERT INTO Booking (Booking_ID, Renter_ID, Space_ID, Status, BookingDate, StartTime, EndTime) VALUES (null, ?, ?, ?, ?, ?, ?)";
             PreparedStatement stmt = conn.prepareStatement(insertStmt, PreparedStatement.RETURN_GENERATED_KEYS);
             
             stmt.setString(1, rent_id);

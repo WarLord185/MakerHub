@@ -1,9 +1,14 @@
+
 package makerhub;
 
-public class Login {
-    public int userId;
-    public String username;
-    public String password;
-    public String accountType;
-}
+import java.sql.Date;
 
+
+public class Login {
+public String name, passw, account;
+    public Login() {
+       
+
+  
+}
+}

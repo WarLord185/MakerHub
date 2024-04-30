@@ -298,6 +298,26 @@ public class Spaces extends DBConnect {
                  
         
     }
+                 
+                public String getType(String id){
+                String h= null;
+
+        try {
+              String sql = "SELECT Name FROM `Category` WHERE CategoryID= ? ";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, id);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+            
+                  h=rs.getString("Name");
+                     
+            }
+        } catch (SQLException e) {
+           System.out.println("ERROR - getType()" + e.getMessage());
+        }
+        return h;
+                }
                 
                  public ManageSpaces getSpaceByName(String name){      
         ManageSpaces p = null;

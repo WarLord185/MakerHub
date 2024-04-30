@@ -1,14 +1,15 @@
 package makerhub;
 
 public class ManageSpaces {
-    private int spaceID;
-    private String space_Name;
-    private String address;
-    private String description;
-    private String type;
-    private double price;
-    private boolean availability;
-    private int ownerID;
+    public int spaceID;
+    public String space_Name;
+    public String address;
+    public String description;
+    public String type;
+    public double price;
+    public String availability;
+    public int ownerID;
+   
 
     // Getter and Setter for Space_ID
     public int getSpaceID() {
@@ -24,6 +25,8 @@ public class ManageSpaces {
         return space_Name;
     }
 
+   
+            
     public void setSpaceName(String spaceName) {
         this.space_Name = spaceName;
     }
@@ -65,11 +68,11 @@ public class ManageSpaces {
     }
 
     // Getter and Setter for Availability
-    public boolean isAvailability() {
+    public String isAvailability() {
         return availability;
     }
 
-    public void setAvailability(boolean availability) {
+    public void setAvailability(String availability) {
         this.availability = availability;
     }
 

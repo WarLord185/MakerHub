@@ -31,10 +31,21 @@ public class MakerHub {
                     System.out.println("Owner ID: " + space.getOwnerID());
                     System.out.println();
                 }*/
-               insert c= new insert();
-               c.insertUser("jeffery", "st charles place","796-0076","jefferydahmer@gmail.com","12/12/12","asdfghj","asdfghj","Owner");
+             /* Spaces c= new Spaces();
+               c.getspaceid("test space");
+              ArrayList<ManageSpaces> list= c.getAllSpaces();
+              for(int o=0; o< list.size(); o++ ){
+                  ManageSpaces f= list.get(o);
+                  String id= f.type;
+                  String name= c.getType(id);
+                  System.out.println(name);*/
+                  
+                  insert j= new insert();
+                  j.insertBooking("1","1","confirm","2024/12/11","2024-12-23 09:00:00","2024-12-23 21:00:00");
+                  
+              }
             }
     
     
     
-        }
+        

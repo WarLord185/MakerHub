@@ -1,7 +1,7 @@
 package makerhub;
 
 public class ManageSpaceOwner {
-    private int ownerID;
+    int ownerID;
     private String name;
     private String address;
     private String phoneNumber;

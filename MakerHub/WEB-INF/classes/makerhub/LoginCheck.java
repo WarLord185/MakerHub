@@ -18,30 +18,29 @@ public class LoginCheck extends DBConnect{
         return false;
     }
     
-    public Login getAccountType(String username, String password) {
-        Login login = null;
-        String sql = "SELECT * FROM `Login` WHERE `Username` = ? AND `Password` = ?";
-    
+    public Login getAccountType(String name,String passw) {
+        Login em = null;
+        String sql = "SELECT * FROM `Login` WHERE `Username` = ? AND  Password = ?";
+
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, username);
-            ps.setString(2, password);
+            ps.setString(1, name);
+            ps.setString(2, passw);
             ResultSet rs = ps.executeQuery();
-    
+
             if (rs.next()) {
-                login = new Login();
-                login.userId = rs.getInt("User_ID");
-                login.username = rs.getString("Username");
-                login.password = rs.getString("Password");
-                login.accountType = rs.getString("Account_Type");
+                em = new Login();
+                em.name=rs.getString("Username");
+                em.passw=rs.getString("Password");
+                em.account=rs.getString("Account_Type");
+               
             }
         } catch (SQLException e) {
-            System.out.println("ERROR - getAccountType(): " + e.getMessage());
+            System.out.println("ERROR - getAccountType()" + e.getMessage());
         }
-    
-        return login;
+
+        return em;
     }
-    
       public boolean checkOwner(String username) {
         try {
             PreparedStatement pst = conn.prepareStatement("SELECT * FROM Space_Owner WHERE Name=?" );
